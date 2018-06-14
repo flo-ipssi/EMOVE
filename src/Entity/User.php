@@ -1,161 +1,212 @@
 <?php
 
+require 'TypeUser.php';
+
 class User
 {
-    private $id_user;
-    private $type_user;
+    private $id;
+    private $type;
     private $username;
     private $password;
     private $firstname;
     private $lastname;
     private $birthdate;
     private $adresse;
-    private $fidelity_point;
-    private $num_telephone;
-    private $num_licence;
+    private $fidelityPoint;
+    private $numTel;
+    private $numLicence;
 
-    public function __construct()
+    public function __construct($id, TypeUser $type, $username, $password, $firstname, $lastname, $birthdate, $adresse, $fidelityPoint, $numTel, $numLicence)
     {
+        $this->id = $id;
+        $this->type = $type;
+        $this->username = $username;
+        $this->password = $password;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->birthdate = $birthdate;
+        $this->adresse = $adresse;
+        $this->fidelityPoint = $fidelityPoint;
+        $this->numTel = $numTel;
+        $this->numLicence = $numLicence;
     }
 
-    //-------------------- GETTERS -----------------------
-
     /**
      * @return mixed
      */
-    public function getIdUser() : int {return $this->id_user;}
-
-    /**
-     * @return mixed
-     */
-    public function getTypeUser() : string {return $this->type_user;}
-
-    /**
-     * @return mixed
-     */
-    public function getUsername() : string {return $this->username;}
-
-    /**
-     * @return mixed
-     */
-    public function getPassword() : string {return $this->password;}
-
-    /**
-     * @return mixed
-     */
-    public function getFirstname() : string {return $this->firstname;}
-
-    /**
-     * @return mixed
-     */
-    public function getLastname() : string {return $this->lastname;}
-
-    /**
-     * @return mixed
-     */
-    public function getBirthdate() : DateTime
-    {return $this->birthdate;}
-
-    /**
-     * @return mixed
-     */
-    public function getAdresse() : string {return $this->adresse;}
-
-    /**
-     * @return mixed
-     */
-    public function getFidelityPoint() : int {return $this->fidelity_point;}
-
-    /**
-     * @return mixed
-     */
-    public function getNumTelephone() : int {return $this->num_telephone;}
-
-    /**
-     * @return mixed
-     */
-    public function getNumLicence() : int {return $this->num_licence;}
-
-    //--------------------------- SETTERS ----------------------------
-
-    /**
-     * @param mixed $type_user
-     */
-    public function setTypeUser($type_user): void
+    public function getId()
     {
-        $this->type_user = $type_user;
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return TypeUser
+     */
+    public function getType()
+    {
+        return $this->type->getLabel();
+    }
+
+    /**
+     * @param TypeUser $type
+     */
+    public function setType(TypeUser $type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 
     /**
      * @param mixed $username
      */
-    public function setUsername($username): void
+    public function setUsername($username)
     {
         $this->username = $username;
     }
 
     /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
      * @param mixed $password
      */
-    public function setPassword($password): void
+    public function setPassword($password)
     {
         $this->password = $password;
     }
 
     /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
      * @param mixed $firstname
      */
-    public function setFirstname($firstname): void
+    public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
     }
 
     /**
+     * @return mixed
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
      * @param mixed $lastname
      */
-    public function setLastname($lastname): void
+    public function setLastname($lastname)
     {
         $this->lastname = $lastname;
     }
 
     /**
+     * @return mixed
+     */
+    public function getBirthdate()
+    {
+        return $this->birthdate;
+    }
+
+    /**
      * @param mixed $birthdate
      */
-    public function setBirthdate($birthdate): void
+    public function setBirthdate($birthdate)
     {
         $this->birthdate = $birthdate;
     }
 
     /**
+     * @return mixed
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
      * @param mixed $adresse
      */
-    public function setAdresse($adresse): void
+    public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
     }
 
     /**
-     * @param mixed $fidelity_point
+     * @return mixed
      */
-    public function setFidelityPoint($fidelity_point): void
+    public function getFidelityPoint()
     {
-        $this->fidelity_point = $fidelity_point;
+        return $this->fidelityPoint;
     }
 
     /**
-     * @param mixed $num_telephone
+     * @param mixed $fidelityPoint
      */
-    public function setNumTelephone($num_telephone): void
+    public function setFidelityPoint($fidelityPoint)
     {
-        $this->num_telephone = $num_telephone;
+        $this->fidelityPoint = $fidelityPoint;
     }
 
     /**
-     * @param mixed $num_licence
+     * @return mixed
      */
-    public function setNumLicence($num_licence): void
+    public function getNumTel()
     {
-        $this->num_licence = $num_licence;
+        return $this->numTel;
     }
+
+    /**
+     * @param mixed $numTel
+     */
+    public function setNumTel($numTel)
+    {
+        $this->numTel = $numTel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumLicence()
+    {
+        return $this->numLicence;
+    }
+
+    /**
+     * @param mixed $numLicence
+     */
+    public function setNumLicence($numLicence)
+    {
+        $this->numLicence = $numLicence;
+    }
+
+
 
 }

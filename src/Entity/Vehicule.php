@@ -1,216 +1,249 @@
 <?php
 
+require 'TypeVehicule.php';
+require 'Marque.php';
+require 'Disponibilite.php';
+require 'Agence.php';
+
 class  Vehicule
 {
-    private $id_vehicule;
-    private $type_vehicule;
-    private $dispo_vehicule;
+    private $id;
+    private $type;
+    private $dispo;
+    private $agence
     private $marque;
     private $modele;
-    private $num_serie;
+    private $numSerie;
     private $couleur;
-    private $plaque_immatriculation;
-    private $nb_kilometres;
-    private $date_achat;
-    private $prix_achat;
+    private $plaqueImmatriculation;
+    private $nbKm;
+    private $dateAchat;
+    private $prixAchat;
     private $image;
 
-    public function __construct()
+    public function __construct($id, TypeVehicule $type, Disponibilite $dispo, Agence $agence, Marque $marque, $modele, $numSerie, $couleur, $plaqueImmatriculation, $nbKm, $dateAchat, $prixAchat, $image)
     {
-
-    }
-
-    //----------------------------LES GETTERS
-
-    public function getIdVehicule() : int
-    {
-        return $this->id_vehicule;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTypeVehicule() : string
-    {
-        return $this->type_vehicule;
+        $this->id = $id;
+        $this->type = $type;
+        $this->dispo = $dispo;
+        $this->agence = $agence;
+        $this->marque = $marque;
+        $this->modele = $modele;
+        $this->numSerie = $numSerie;
+        $this->couleur = $couleur;
+        $this->plaqueImmatriculation = $plaqueImmatriculation;
+        $this->nbKm = $nbKm;
+        $this->dateAchat = $dateAchat;
+        $this->prixAchat = $prixAchat;
+        $this->image = $image;
     }
 
     /**
      * @return mixed
      */
-    public function getDispoVehicule() : int
+    public function getId()
     {
-        return $this->dispo_vehicule;
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
      * @return mixed
      */
-    public function getMarque() : string
+    public function getType()
     {
-        return $this->marque;
+        return $this->type->getLabel();
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType(TypeVehicule $type)
+    {
+        $this->type = $type;
     }
 
     /**
      * @return mixed
      */
-    public function getModele() : string
+    public function getDispo()
     {
-        return $this->modele;
+        return $this->dispo->getLabel();
+    }
+
+    /**
+     * @param mixed $dispo
+     */
+    public function setDispo(Disponibilite $dispo)
+    {
+        $this->dispo = $dispo;
+    }
+
+    /**
+     * @return Agence
+     */
+    public function getAgence()
+    {
+        return $this->agence->getLabel();
+    }
+
+    /**
+     * @param Agence $agence
+     */
+    public function setAgence(Agence $agence)
+    {
+        $this->agence = $agence;
     }
 
     /**
      * @return mixed
      */
-    public function getNumSerie() : string
+    public function getMarque()
     {
-        return $this->num_serie;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCouleur() : string
-    {
-        return $this->couleur;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPlaqueImmatriculation() : string
-    {
-        return $this->plaque_immatriculation;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNbKilometres() : int
-    {
-        return $this->nb_kilometres;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDateAchat() : DateTime
-    {
-        return $this->date_achat;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPrixAchat() : float
-    {
-        return $this->prix_achat;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImage() : Image
-    {
-        return $this->image;
-    }
-
-
-    //------------------------------------------- SETTERS -----------------------------------
-
-    /**
-     * @param mixed $id_vehicule
-     */
-    public function setIdVehicule($id_vehicule): void
-    {
-        $this->id_vehicule = $id_vehicule;
-    }
-
-    /**
-     * @param mixed $type_vehicule
-     */
-    public function setTypeVehicule($type_vehicule): void
-    {
-        $this->type_vehicule = $type_vehicule;
-    }
-
-    /**
-     * @param mixed $dispo_vehicule
-     */
-    public function setDispoVehicule($dispo_vehicule): void
-    {
-        $this->dispo_vehicule = $dispo_vehicule;
+        return $this->marque->getLabel();
     }
 
     /**
      * @param mixed $marque
      */
-    public function setMarque($marque): void
+    public function setMarque(Marque $marque)
     {
         $this->marque = $marque;
     }
 
     /**
+     * @return mixed
+     */
+    public function getModele()
+    {
+        return $this->modele;
+    }
+
+    /**
      * @param mixed $modele
      */
-    public function setModele($modele): void
+    public function setModele($modele)
     {
         $this->modele = $modele;
     }
 
     /**
-     * @param mixed $num_serie
+     * @return mixed
      */
-    public function setNumSerie($num_serie): void
+    public function getNumSerie()
     {
-        $this->num_serie = $num_serie;
+        return $this->numSerie;
+    }
+
+    /**
+     * @param mixed $numSerie
+     */
+    public function setNumSerie($numSerie)
+    {
+        $this->numSerie = $numSerie;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCouleur()
+    {
+        return $this->couleur;
     }
 
     /**
      * @param mixed $couleur
      */
-    public function setCouleur($couleur): void
+    public function setCouleur($couleur)
     {
         $this->couleur = $couleur;
     }
 
     /**
-     * @param mixed $plaque_immatriculation
+     * @return mixed
      */
-    public function setPlaqueImmatriculation($plaque_immatriculation): void
+    public function getPlaqueImmatriculation()
     {
-        $this->plaque_immatriculation = $plaque_immatriculation;
+        return $this->plaqueImmatriculation;
     }
 
     /**
-     * @param mixed $nb_kilometres
+     * @param mixed $plaqueImmatriculation
      */
-    public function setNbKilometres($nb_kilometres): void
+    public function setPlaqueImmatriculation($plaqueImmatriculation)
     {
-        $this->nb_kilometres = $nb_kilometres;
+        $this->plaqueImmatriculation = $plaqueImmatriculation;
     }
 
     /**
-     * @param mixed $date_achat
+     * @return mixed
      */
-    public function setDateAchat($date_achat): void
+    public function getNbKm()
     {
-        $this->date_achat = $date_achat;
+        return $this->nbKm;
     }
 
     /**
-     * @param mixed $prix_achat
+     * @param mixed $nbKm
      */
-    public function setPrixAchat($prix_achat): void
+    public function setNbKm($nbKm)
     {
-        $this->prix_achat = $prix_achat;
+        $this->nbKm = $nbKm;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateAchat()
+    {
+        return $this->dateAchat;
+    }
+
+    /**
+     * @param mixed $dateAchat
+     */
+    public function setDateAchat($dateAchat)
+    {
+        $this->dateAchat = $dateAchat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrixAchat()
+    {
+        return $this->prixAchat;
+    }
+
+    /**
+     * @param mixed $prixAchat
+     */
+    public function setPrixAchat($prixAchat)
+    {
+        $this->prixAchat = $prixAchat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
      * @param mixed $image
      */
-    public function setImage($image): void
+    public function setImage($image)
     {
         $this->image = $image;
     }
+
 }
