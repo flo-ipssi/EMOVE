@@ -1,0 +1,148 @@
+/****************************************************************/
+/*********************** PARAMETRAGE SASS ***********************/
+/****************************************************************/
+$family1:Maven Pro, sans-serif;
+$family2:Julius Sans One, sans-serif;
+
+$color: #ff9d3d;
+
+/****************************************************************/
+/***************************** CSS ******************************/
+/****************************************************************/
+
+/* HEADER */
+header{
+  color : $color;
+  height: 80px;
+  img{
+    max-height:80px;
+  }
+  nav{
+    ul{
+      float:right;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 15px;
+      font-size: 25px;
+      li{
+        display: inline-block;
+        margin: 5px 10px;
+        padding: 0;
+        a{
+          color : $color;
+          text-decoration : none;
+        }
+      }
+    }
+  }
+}
+
+/****************************************************************/
+/*************************** CONTENT ****************************/
+/****************************************************************/
+
+
+.search{
+  position: absolute;
+    z-index: 9;
+    background: #0000009e;
+    padding: 50px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 12%;
+    border-radius: 10px;
+    border: 2px inset $color;
+    color: #EEE;
+
+    h2{
+      text-align:center;
+      color: $color;
+      padding-bottom:20px;
+    }
+
+    label{
+      width: 100%;
+    }
+    
+    input{
+      max-height: 38px;
+    }
+}
+
+
+
+.carousel-inner {
+    max-height: 100vh;
+}
+
+.introduce{
+  background: #ebebeb;
+  padding: 20px;
+  height: 90vh; 
+  padding-bottom: 20px;
+  h2{
+    text-align:center;
+    color: $color;
+  }
+
+  .card{
+     margin: 40px auto;
+    text-align: center;
+    max-width: 500px;
+    padding: 50px;
+    width: 504px;
+
+    i{
+      color:$color;
+      font-size: 133px;
+      padding: 10px 0px;
+      margin-top: 80px;
+      padding-bottom: 50px;
+    }
+
+    h3{
+      color: $color;
+      text-transform: uppercase;
+    }
+  }
+
+}
+
+/****************************************************************/
+/************************** DATEPICKER **************************/
+/****************************************************************/
+
+.dropdown-menu {
+  border: 2px solid #EEEE;
+  padding: 1px;
+}
+
+.datepicker-days{
+    min-width: 200px;
+    border: 2px solid $color;
+    padding: 5px;
+  .table-condensed{
+    min-width: 200px;
+
+    th{
+      text-align: center
+    }
+
+    th:last-child{
+      color: #FFF;
+      background: $color;
+    }
+    tr{
+      .day{
+        cursor: pointer;
+      }
+      .disabled{
+        color: #bcbbbb;
+      }
+      td{
+        text-align: center;
+      }
+    }
+  } 
+}

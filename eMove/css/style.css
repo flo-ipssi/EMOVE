@@ -1,0 +1,103 @@
+/****************************************************************/
+/*********************** PARAMETRAGE SASS ***********************/
+/****************************************************************/
+/****************************************************************/
+/***************************** CSS ******************************/
+/****************************************************************/
+/* HEADER */
+header {
+  color: #ff9d3d;
+  height: 80px; }
+  header img {
+    max-height: 80px; }
+  header nav ul {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    font-size: 25px; }
+    header nav ul li {
+      display: inline-block;
+      margin: 5px 10px;
+      padding: 0; }
+      header nav ul li a {
+        color: #ff9d3d;
+        text-decoration: none; }
+
+/****************************************************************/
+/*************************** CONTENT ****************************/
+/****************************************************************/
+.search {
+  position: absolute;
+  z-index: 9;
+  background: #0000009e;
+  padding: 50px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 12%;
+  border-radius: 10px;
+  border: 2px inset #ff9d3d;
+  color: #EEE; }
+  .search h2 {
+    text-align: center;
+    color: #ff9d3d;
+    padding-bottom: 20px; }
+  .search label {
+    width: 100%; }
+  .search input {
+    max-height: 38px; }
+
+.carousel-inner {
+  max-height: 100vh; }
+
+.introduce {
+  background: #ebebeb;
+  padding: 20px;
+  height: 90vh;
+  padding-bottom: 20px; }
+  .introduce h2 {
+    text-align: center;
+    color: #ff9d3d; }
+  .introduce .card {
+    margin: 40px auto;
+    text-align: center;
+    max-width: 500px;
+    padding: 50px;
+    width: 504px; }
+    .introduce .card i {
+      color: #ff9d3d;
+      font-size: 133px;
+      padding: 10px 0px;
+      margin-top: 80px;
+      padding-bottom: 50px; }
+    .introduce .card h3 {
+      color: #ff9d3d;
+      text-transform: uppercase; }
+
+/****************************************************************/
+/************************** DATEPICKER **************************/
+/****************************************************************/
+.dropdown-menu {
+  border: 2px solid #EEEE;
+  padding: 1px; }
+
+.datepicker-days {
+  min-width: 200px;
+  border: 2px solid #ff9d3d;
+  padding: 5px; }
+  .datepicker-days .table-condensed {
+    min-width: 200px; }
+    .datepicker-days .table-condensed th {
+      text-align: center; }
+    .datepicker-days .table-condensed th:last-child {
+      color: #FFF;
+      background: #ff9d3d; }
+    .datepicker-days .table-condensed tr .day {
+      cursor: pointer; }
+    .datepicker-days .table-condensed tr .disabled {
+      color: #bcbbbb; }
+    .datepicker-days .table-condensed tr td {
+      text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
