@@ -1,9 +1,18 @@
 /****************************************************************/
 /*********************** PARAMETRAGE SASS ***********************/
 /****************************************************************/
+@font-face {
+  font-family: "Century Gothic";
+  src: url(../fonts/CenturyGothicRegular.ttf) format("truetype"); }
+@font-face {
+  font-family: "Candara";
+  src: url(../fonts/Candara.ttf) format("truetype"); }
 /****************************************************************/
 /***************************** CSS ******************************/
 /****************************************************************/
+body {
+  font-family: "Century Gothic", sans-serif; }
+
 /* HEADER */
 header {
   color: #ff9d3d;
@@ -16,20 +25,29 @@ header {
     padding: 0;
     margin: 0;
     margin-top: 15px;
-    font-size: 25px; }
+    font-size: 23px; }
     header nav ul li {
+      font-family: "Century Gothic", sans-serif;
+      font-weight: 600;
       display: inline-block;
-      margin: 5px 10px;
+      margin: 5px 15px;
       padding: 0; }
       header nav ul li a {
         color: #ff9d3d;
         text-decoration: none; }
+        header nav ul li a:hover {
+          text-decoration: none;
+          color: #6a6a6a; }
+      header nav ul li img {
+        margin-top: -10px;
+        height: 25px; }
 
 /****************************************************************/
 /*************************** CONTENT ****************************/
 /****************************************************************/
 .search {
   position: absolute;
+  font-family: "Candara", sans-serif;
   z-index: 9;
   background: #0000009e;
   padding: 50px;
@@ -44,36 +62,87 @@ header {
     color: #ff9d3d;
     padding-bottom: 20px; }
   .search label {
-    width: 100%; }
+    width: 100%;
+    font-size: 24px; }
   .search input {
     max-height: 38px; }
-
-.carousel-inner {
-  max-height: 100vh; }
+  .search button {
+    background: #ff9d3d;
+    color: #FFF;
+    display: block;
+    margin: auto;
+    margin-top: 45px;
+    font-size: 20px;
+    border: 1px solid;
+    font-weight: 900; }
+    .search button:hover {
+      background: #6a6a6a;
+      color: #FFF; }
 
 .introduce {
-  background: #ebebeb;
-  padding: 20px;
-  height: 90vh;
-  padding-bottom: 20px; }
+  padding: 60px 20px 60px 20px;
+  min-height: 100vh;
+  background: #FFF; }
+  .introduce .row {
+    margin: auto; }
   .introduce h2 {
     text-align: center;
     color: #ff9d3d; }
   .introduce .card {
-    margin: 40px auto;
     text-align: center;
     max-width: 500px;
     padding: 50px;
-    width: 504px; }
+    border: 4px double #ff9d3d;
+    width: 460px;
+    max-height: 360px;
+    cursor: pointer;
+    margin: auto;
+    color: #ff9d3d;
+    -webkit-transition: color .5s, background .5s, border .5s, -webkit-ease-out .5s;
+    transition: color .5s, background .5s, border .5s, ease-out .5s; }
+    .introduce .card:hover {
+      background: #ff9d3d;
+      border: 4px double #FFF;
+      color: #FFF; }
     .introduce .card i {
-      color: #ff9d3d;
       font-size: 133px;
       padding: 10px 0px;
       margin-top: 80px;
       padding-bottom: 50px; }
     .introduce .card h3 {
-      color: #ff9d3d;
       text-transform: uppercase; }
+
+.contact {
+  background: #333;
+  color: #FFF;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 40px 15px; }
+  .contact .row {
+    margin: 0px; }
+    .contact .row .infos {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 20px; }
+      .contact .row .infos li {
+        padding: 20px; }
+        .contact .row .infos li i {
+          padding-right: 20px;
+          font-size: 35px;
+          width: 80px;
+          text-align: center; }
+    .contact .row button {
+      display: block;
+      margin: auto; }
+
+.page-footer {
+  text-align: center;
+  background: #222;
+  color: #FFF;
+  margin-top: 0px !important; }
+  .page-footer .py-5 {
+    padding-bottom: 0px !important; }
 
 /****************************************************************/
 /************************** DATEPICKER **************************/

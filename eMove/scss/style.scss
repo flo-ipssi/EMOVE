@@ -1,14 +1,31 @@
 /****************************************************************/
 /*********************** PARAMETRAGE SASS ***********************/
 /****************************************************************/
-$family1:Maven Pro, sans-serif;
-$family2:Julius Sans One, sans-serif;
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url(../fonts/CenturyGothicRegular.ttf) format("truetype");
+}
+
+
+@font-face {
+  font-family: "Candara";
+  src: url(../fonts/Candara.ttf) format("truetype");
+}
+
+
+$family1:"Century Gothic", sans-serif;
+$family2:"Candara", sans-serif;
 
 $color: #ff9d3d;
+$color1: #6a6a6a;
 
 /****************************************************************/
 /***************************** CSS ******************************/
 /****************************************************************/
+body{
+  font-family: $family1;
+}
 
 /* HEADER */
 header{
@@ -24,14 +41,24 @@ header{
       padding: 0;
       margin: 0;
       margin-top: 15px;
-      font-size: 25px;
+      font-size: 23px;
       li{
+        font-family: $family1;
+        font-weight: 600;
         display: inline-block;
-        margin: 5px 10px;
+        margin: 5px 15px;
         padding: 0;
         a{
           color : $color;
           text-decoration : none;
+          &:hover{
+            text-decoration : none;
+            color : $color1;
+          }
+        }
+        img{
+          margin-top: -10px;
+          height: 25px;
         }
       }
     }
@@ -45,6 +72,7 @@ header{
 
 .search{
   position: absolute;
+  font-family:$family2;
     z-index: 9;
     background: #0000009e;
     padding: 50px;
@@ -63,38 +91,60 @@ header{
 
     label{
       width: 100%;
+      font-size: 24px;
     }
     
     input{
       max-height: 38px;
     }
+
+    button{
+      background: $color;
+      color: #FFF;
+      display: block;
+      margin: auto;
+      margin-top: 45px;
+      font-size: 20px;
+      border: 1px solid;
+      font-weight: 900;
+      &:hover{
+        background: $color1;
+        color: #FFF;
+      }
+    }
 }
 
-
-
-.carousel-inner {
-    max-height: 100vh;
-}
 
 .introduce{
-  background: #ebebeb;
-  padding: 20px;
-  height: 90vh; 
-  padding-bottom: 20px;
+  padding: 60px 20px 60px 20px;
+  min-height: 100vh; 
+  background: #FFF;
+  .row{
+    margin:  auto;
+  }
   h2{
     text-align:center;
     color: $color;
   }
-
   .card{
-     margin: 40px auto;
     text-align: center;
     max-width: 500px;
     padding: 50px;
-    width: 504px;
+    border: 4px double $color;
+    width: 460px;
+    max-height: 360px;
+    cursor: pointer;
+    margin: auto;
+    color:$color;
+    -webkit-transition: color .5s, background .5s, border .5s, -webkit-ease-out .5s;
+    transition: color .5s, background .5s, border .5s, ease-out .5s;
+    &:hover{
+      background: $color;
+      border: 4px double #FFF;
+      color: #FFF;
+    }
 
     i{
-      color:$color;
       font-size: 133px;
       padding: 10px 0px;
       margin-top: 80px;
@@ -102,12 +152,54 @@ header{
     }
 
     h3{
-      color: $color;
       text-transform: uppercase;
     }
   }
 
 }
+
+.contact{
+  background: #333;
+  color: #FFF;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 40px 15px;
+  .row{
+    margin:0px;
+    .infos{
+      margin: 0;
+      padding: 0;
+      list-style:none;
+      font-size: 20px;
+      li{
+        padding: 20px;
+        i{
+          padding-right: 20px;
+          font-size: 35px;
+          width: 80px;
+          text-align: center;
+        }
+      }
+    }
+
+    button{
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+.page-footer{
+  text-align:center;
+    background: #222;
+    color: #FFF;
+    margin-top: 0px !important;
+
+    .py-5{
+      padding-bottom: 0px !important; 
+    }
+}
+
 
 /****************************************************************/
 /************************** DATEPICKER **************************/
