@@ -19,6 +19,7 @@ $family2:"Candara", sans-serif;
 
 $color: #ff9d3d;
 $color1: #6a6a6a;
+$color2: #6a6a6a;
 
 /****************************************************************/
 /***************************** CSS ******************************/
@@ -35,6 +36,12 @@ a{
 header{
   color : $color;
   height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: #FFF;
+  border-bottom: 4px solid $color;
   img{
     max-height:80px;
   }
@@ -75,7 +82,9 @@ header{
 /****************************************************************/
 /*************************** CONTENT ****************************/
 /****************************************************************/
-
+.container-fluid{
+  margin-top: 80px;
+}
 
 .search{
     position: absolute;
@@ -126,7 +135,7 @@ header{
 
 
 .introduce{
-  padding: 60px 20px 60px 20px;
+  padding: 60px 20px 0px 20px;
   min-height: 75vh; 
   background: #FFF;
 
@@ -144,10 +153,10 @@ header{
       max-width: 500px;
       padding: 50px;
       border: 4px double $color;
-      width: 460px;
+      width: 415px;
       max-height: 360px;
       cursor: pointer;
-      margin: 30px;
+      margin: 35px;
       color:$color;
       -webkit-transition: color .5s, background .5s, border .5s, -webkit-ease-out .5s;
       transition: color .5s, background .5s, border .5s, ease-out .5s;
@@ -321,16 +330,6 @@ header{
       }
     }
 }
-
-
-
-
-/****************************************************************/
-/**************************** ADIMN *****************************/
-/****************************************************************/
-
-
-
 
 
 /****************************************************************/

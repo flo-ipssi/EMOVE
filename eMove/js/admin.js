@@ -11,42 +11,22 @@ $( document ).ready(function() {
 	    todayHighlight: true,
 	    toggleActive: true
 	});
-	$('.naissance').datepicker({
-	    format: "dd/mm/yyyy",
-		language: "fr",
-		todayHighlight: true,
-	});
-	$(".owl-carousel").owlCarousel({
-		loop:true,
-	    margin:10,
-	    nav:true,
-	    responsive:{
-	        0:{
-	            items:1,
-	            nav:true
-	        },
-	        800:{
-	            items:2,
-	            nav:false
-	        },
-	        1000:{
-	            nav:true,
-	            loop:false
-	        }
-	    }
-	});
 	
 	$(".dashboard-carousel").slick({
 	    infinite: true,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
+	$('.wrapper #content .card-footer i').click(function () {
+	    var currentIndex = $(this).attr('data-slick-index');
+	    console.log(currentIndex);
+		$('.dashboard-carousel').slick('slickGoTo', currentIndex); 
+	});
+	
 
 	$('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
         $('#content').toggleClass('active');
     });
-	
-	
 });
 

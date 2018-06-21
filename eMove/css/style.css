@@ -19,7 +19,13 @@ a {
 /* HEADER */
 header {
   color: #ff9d3d;
-  height: 80px; }
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: #FFF;
+  border-bottom: 4px solid #ff9d3d; }
   header img {
     max-height: 80px; }
   header nav ul {
@@ -51,6 +57,9 @@ header {
 /****************************************************************/
 /*************************** CONTENT ****************************/
 /****************************************************************/
+.container-fluid {
+  margin-top: 80px; }
+
 .search {
   position: absolute;
   font-family: "Candara", sans-serif;
@@ -89,7 +98,7 @@ header {
       color: #FFF; }
 
 .introduce {
-  padding: 60px 20px 60px 20px;
+  padding: 60px 20px 0px 20px;
   min-height: 75vh;
   background: #FFF; }
   .introduce h2 {
@@ -104,10 +113,10 @@ header {
       max-width: 500px;
       padding: 50px;
       border: 4px double #ff9d3d;
-      width: 460px;
+      width: 415px;
       max-height: 360px;
       cursor: pointer;
-      margin: 30px;
+      margin: 35px;
       color: #ff9d3d;
       -webkit-transition: color .5s, background .5s, border .5s, -webkit-ease-out .5s;
       transition: color .5s, background .5s, border .5s, ease-out .5s; }
@@ -224,9 +233,6 @@ header {
     .small-footer .fa-pinterest:hover {
       color: #cb2027; }
 
-/****************************************************************/
-/**************************** ADIMN *****************************/
-/****************************************************************/
 /****************************************************************/
 /****************************  MODAL ****************************/
 /****************************************************************/

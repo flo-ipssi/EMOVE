@@ -241,7 +241,7 @@
 		</footer>	
 	<!-- Footer -->
 	<!-- Modal -->
-  	<?php require 'modal.php' ?>
+  	<?php require 'blocs/modal.php' ?>
   	<!-- Modal-->
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/api.js" ></script>
