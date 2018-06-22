@@ -19,7 +19,8 @@ $family2:"Candara", sans-serif;
 
 $color: #ff9d3d;
 $color1: #6a6a6a;
-$color2: #6a6a6a;
+$colorlight: #ff9e57;
+$colordark: #e26000;
 
 /****************************************************************/
 /***************************** CSS ******************************/
@@ -59,7 +60,7 @@ header{
         display: inline-block;
         margin: 5px 8px;
         padding: 0;
-        button{
+        button, a{
           cursor: pointer;
           background: none;
           border: 0px;
@@ -76,15 +77,131 @@ header{
         }
       }
     }
+    form{
+      margin-top: 20px;
+        input[type="text"]{
+          border: 0px;
+          color: #212529;
+          border-bottom: 1px solid $color;
+          border-radius: 0px;
+          &:focus{    
+            color: #212529;
+            outline: none !important;
+            border:0px;
+            border-bottom: 1px solid $color;
+            box-shadow: 0 0 0px $color;
+        }
+      }
+    }
+    .dropdown-menu.show {
+      margin-top: 10px;
+      border: 1px solid $color;
+      a.dropdown-item{
+        padding: 10px 1.5rem;
+        &:hover{
+          color: #FFF;
+          background: $color;
+        }
+        &:click{
+          background: $color;
+        }
+      }
+      .btn-danger{
+        width:100%;
+      }
+    }
+  }
+  & + div{
+    margin-top: 80px;
+  }
+
+
+}
+
+/****************************************************************/
+/**************************** SHOP ******************************/
+/****************************************************************/
+.shop{
+
+  h2.my-4{
+    padding: 10px;
+  
+  }
+  .my-4{
+    border-radius: 5px;
+    background: $colorlight;
+    color: #FFF;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .input-group-text{
+    background: $colorlight;
+    color:#FFF;
+  }
+
+  .carousel-inner{
+    .carousel-item {
+      h3{
+        position: absolute;
+        text-align: center;
+        font-family: $family2;
+        width: 75%;
+        top: 37%;
+        margin: 0 auto;
+        font-size: 35px;
+        right: 0;
+        left: 0;
+      }
+      p{
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin-bottom: 3px;
+        font-size: 8px;
+      }
+    }
+  }
+
+  .card{
+    .card-header{
+      color:#333;
+      h4{
+        float: left;
+      }
+      p{
+        float: right;
+        font-weight: 900;
+      }
+    }
+
+    .card-text {
+      margin-bottom: 0;
+      /*overflow: hidden;
+      white-space: nowrap;*/
+      max-width: none;
+      height:50px;
+      text-overflow: ellipsis;
+      font-size: 14px;
+    }
+    .text-muted {
+      font-size: 100%;
+      float: right;
+      color: #ffa700!important;
+    }
+  }
+
+  a.list-group-item{
+    background: $colordark;
+    color: #FFf;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
 }
 
 /****************************************************************/
 /*************************** CONTENT ****************************/
 /****************************************************************/
-.container-fluid{
-  margin-top: 80px;
-}
 
 .search{
     position: absolute;

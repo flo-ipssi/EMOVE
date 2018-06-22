@@ -17,7 +17,7 @@ $( document ).ready(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
-	$('.wrapper #content .card-footer i').click(function () {
+	$('.wrapper #content .card-footer i.fa-list-ul').click(function () {
 	    var currentIndex = $(this).attr('data-slick-index');
 	    console.log(currentIndex);
 		$('.dashboard-carousel').slick('slickGoTo', currentIndex); 

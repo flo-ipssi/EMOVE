@@ -35,12 +35,6 @@ $( document ).ready(function() {
 	        }
 	    }
 	});
-	
-	$(".dashboard-carousel").slick({
-	    infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1
-	});
 
 	$('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');

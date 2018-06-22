@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="css/slick.css"> 
 	<link rel="stylesheet" type="text/css" href="css/admin.css" />
 	<script src="js/jquery-3.3.1.min.js"></script>
-
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
@@ -98,7 +97,6 @@
 	            <a href="#"><li>Véhicule</li></a>
 	            <a href="#"><li>Messageries</li></a>
 	            <a href="#"><li>Mes locations</li></a>
-	            <a href="#"><li>Contact</li></a>
 	        </ul>
 	    </nav>
 
@@ -232,6 +230,25 @@
 				    <h2>Agence</h2>
 				    <table class="table">
 					  <thead class="thead-light">
+					    <tr>
+						    <th scope="col">Véhicule</th>
+						    <th scope="col">Locataire</th>
+						    <th scope="col">Suivi</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+					      <td>Mark</td>
+					      <td>Otto</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				<div> 
+				    <h2>Offres</h2>
+				    <table class="table">
+					  <thead class="thead-dark">
 					    <tr>
 						    <th scope="col">Véhicule</th>
 						    <th scope="col">Locataire</th>
