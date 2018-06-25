@@ -200,7 +200,7 @@
 					    <label for="message">Message</label>
 						<textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
 					</div>
-					<button class="btn btn-primary" type="submit">Submit</button>
+					<button class="btn btn-primary" type="submit">Envoyer</button>
 				</div>
 			</form>
 			<hr>

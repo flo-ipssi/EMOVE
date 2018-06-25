@@ -96,7 +96,7 @@
 	            <a href="#"><li>Utilisateur</li></a>
 	            <a href="#"><li>Véhicule</li></a>
 	            <a href="#"><li>Messageries</li></a>
-	            <a href="#"><li>Mes locations</li></a>
+	            <a href="#"><li>Mes ventes</li></a>
 	        </ul>
 	    </nav>
 

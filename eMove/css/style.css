@@ -79,7 +79,51 @@ header {
     header nav .dropdown-menu.show .btn-danger {
       width: 100%; }
   header + div {
-    margin-top: 80px; }
+    margin-top: 80px;
+    min-height: 72vh; }
+
+/****************************************************************/
+/*************************** PROFIL *****************************/
+/****************************************************************/
+.profile .banner {
+  background: #e26000;
+  padding: 20px;
+  border-bottom: 3px solid #FFF; }
+.profile .icon {
+  max-width: 120px;
+  float: left; }
+  .profile .icon + h3 {
+    float: left;
+    margin: 25px 40px;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 50px; }
+.profile .jumbotron-fluid h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 50px; }
+.profile .col-sm-3 {
+  padding: 20px; }
+  .profile .col-sm-3 + div {
+    padding: 27px; }
+.profile ul > li.text-muted {
+  background: #e26000;
+  color: #FFF !important; }
+.profile > div {
+  background: #ff9d3d; }
+
+/****************************************************************/
+/************************** FACTURE *****************************/
+/****************************************************************/
+.reservation {
+  padding: 50px; }
+
+.resume {
+  padding: 50px;
+  border: 4px solid #e26000;
+  margin: 123px auto 50px; }
+  .resume address p {
+    margin: 0px; }
 
 /****************************************************************/
 /**************************** SHOP ******************************/
@@ -130,15 +174,55 @@ header {
 .shop .card .text-muted {
   font-size: 100%;
   float: right;
-  color: #ffa700 !important; }
+  color: #ffa700; }
 .shop a.list-group-item {
   background: #e26000;
   color: #FFf;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px; }
 
+.product .card .carousel {
+  background: #252525; }
+  .product .card .carousel img {
+    width: auto !important;
+    margin: auto; }
+.product .card .text-muted {
+  color: #333 !important; }
+.product .card hr {
+  clear: both; }
+.product .card a.booking {
+  float: right;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase; }
+.product .my-5 {
+  background: #ff9e57;
+  color: #FFF; }
+  .product .my-5 .card-header {
+    color: #FFF;
+    font-weight: 800; }
+  .product .my-5 label {
+    text-transform: uppercase;
+    font-weight: 900; }
+  .product .my-5 button {
+    margin: 30px auto 0px;
+    display: block;
+    width: 111px;
+    font-weight: 900; }
+
 /****************************************************************/
-/*************************** CONTENT ****************************/
+/************************** FANCYBOX ****************************/
+/****************************************************************/
+.fancybox-lock .fancybox-overlay {
+  background: #000000db; }
+
+.fancybox-close {
+  background: url(../img/cross.png) no-repeat;
+  top: -4px;
+  right: -10px; }
+
+/****************************************************************/
+/*************************** ACCUEIL ****************************/
 /****************************************************************/
 .search {
   position: absolute;
@@ -277,7 +361,7 @@ header {
   text-align: center;
   background: #222;
   color: #FFF;
-  margin-top: 0px !important; }
+  margin-top: 20px !important; }
   .small-footer a {
     color: #FFF; }
   .small-footer .py-5 {

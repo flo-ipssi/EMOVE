@@ -113,11 +113,80 @@ header{
   }
   & + div{
     margin-top: 80px;
+    min-height: 72vh;
   }
 
 
 }
 
+/****************************************************************/
+/*************************** PROFIL *****************************/
+/****************************************************************/
+
+.profile{
+
+  .banner{
+    background: $colordark;
+    padding: 20px;    
+    border-bottom: 3px solid #FFF;
+  }
+  .icon{
+    max-width: 120px;
+    float: left;
+    + h3{
+      float: left;
+      margin: 25px 40px;
+      color: #FFF;
+      font-weight: 800;
+      font-size: 50px;
+    }
+  }
+  .jumbotron-fluid{
+    h2{
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom:50px;
+    }
+  }
+
+  .col-sm-3{
+    padding: 20px;
+    + div{
+      padding: 27px;
+    }
+  }
+
+  ul{
+    > li.text-muted{
+      background: $colordark;
+      color: #FFF !important;
+    }
+  }
+
+  > div{
+    background:$color;
+  }
+}
+
+/****************************************************************/
+/************************** FACTURE *****************************/
+/****************************************************************/
+.reservation{
+  padding: 50px;
+}
+
+.resume{
+  padding: 50px;
+  border: 4px solid $colordark;
+  margin: 123px auto 50px;
+  address{
+    p{
+      margin: 0px;
+    }
+  }
+
+
+}
 /****************************************************************/
 /**************************** SHOP ******************************/
 /****************************************************************/
@@ -187,7 +256,7 @@ header{
     .text-muted {
       font-size: 100%;
       float: right;
-      color: #ffa700!important;
+      color: #ffa700;
     }
   }
 
@@ -199,8 +268,72 @@ header{
   }
 }
 
+
+.product{
+  .card{
+    .carousel{
+      background: #252525;
+      img{
+        width: auto !important;
+        margin: auto;
+      }
+    }
+    .card-body{
+
+    }
+    .text-muted{
+      color: #333 !important;
+    }
+    hr{
+      clear: both;
+    }
+    a.booking{
+      float: right;
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+
+  .my-5 {
+    background: $colorlight;
+    color: #FFF;
+    .card-header{
+      color: #FFF;
+      font-weight: 800;
+    }
+
+    label{
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    button{
+      margin: 30px auto 0px;
+      display: block;
+      width: 111px;
+      font-weight: 900;
+    }
+  }
+}
+
+
 /****************************************************************/
-/*************************** CONTENT ****************************/
+/************************** FANCYBOX ****************************/
+/****************************************************************/
+
+.fancybox-lock .fancybox-overlay{
+  background: #000000db;
+}
+
+.fancybox-close {
+    background: url(../img/cross.png) no-repeat;
+    top: -4px;
+    right: -10px;
+}
+
+/****************************************************************/
+/*************************** ACCUEIL ****************************/
 /****************************************************************/
 
 .search{
@@ -386,14 +519,14 @@ header{
 }
 
 .small-footer{
+  text-align:center;
+  background: #222;
+  color: #FFF;
+  margin-top: 20px !important;
+
   a{
     color: #FFF;
   }
-  text-align:center;
-    background: #222;
-    color: #FFF;
-    margin-top: 0px !important;
-
     .py-5{
       padding-bottom: 0px !important; 
     }

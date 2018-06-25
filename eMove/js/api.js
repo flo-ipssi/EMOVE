@@ -41,6 +41,8 @@ $( document ).ready(function() {
         $('#content').toggleClass('active');
     });
 	
-	
+	$(".gallery_image").fancybox({
+		'hideOnContentClick': true
+	});
 });
 

@@ -98,7 +98,6 @@ h2, .mr-5, header {
       .wrapper #content .dashboard-carousel .slick-list {
         cursor: pointer; }
       .wrapper #content .dashboard-carousel .slick-slide {
-        padding: 0px 20px;
         max-width: 100%; }
 
 /****************************************************************/

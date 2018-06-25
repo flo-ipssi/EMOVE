@@ -31,20 +31,20 @@
         </div>
         <div class="col-sm-4">
           <ul>
-          <!-- <li><button type="button"  data-toggle="modal" data-target="#insription">Inscription</button></li>
-          <li> | </li>
-          <li><button type="button"  data-toggle="modal" data-target="#connexion">Connexion</button></li>
-          <li><a href="#"><img src="img/user.png" alt="" /></a></li> -->
-          <li><a href="#">Véhicule</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil <i class="fa fa-user" aria-hidden="true"></i></a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Commandes</a>
-              <a class="dropdown-item" href="#">Profil</a>
-              <div class="dropdown-divider"></div>
-              <button type="button" class="btn btn-danger">Danger</button>
-            </div>
-          </li>
+            <!-- <li><button type="button"  data-toggle="modal" data-target="#insription">Inscription</button></li>
+            <li> | </li>
+            <li><button type="button"  data-toggle="modal" data-target="#connexion">Connexion</button></li>
+            <li><a href="#"><img src="img/user.png" alt="" /></a></li> -->
+            <li><a href="#">Véhicule</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil <i class="fa fa-user" aria-hidden="true"></i></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Profil</a>
+                <a class="dropdown-item" href="#">Commandes</a>
+                <div class="dropdown-divider"></div>
+                <button type="button" class="btn btn-danger">Déconnexion</button>
+              </div>
+            </li>
           </ul>         
         </div>
       </div>
