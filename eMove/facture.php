@@ -1,5 +1,6 @@
 <?php
 	include 'config/functions.php';
+	require 'blocs/head.php'; 
 ?>
 <!DOCTYPE html>
 <html>

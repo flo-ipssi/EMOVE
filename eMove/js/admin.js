@@ -14,12 +14,15 @@ $( document ).ready(function() {
 	
 	$(".dashboard-carousel").slick({
 	    infinite: true,
+	    responsive: true,
 		slidesToShow: 1,
-		slidesToScroll: 1
 	});
 	$('.wrapper #content .card-footer i.fa-list-ul').click(function () {
 	    var currentIndex = $(this).attr('data-slick-index');
-	    console.log(currentIndex);
+		$('.dashboard-carousel').slick('slickGoTo', currentIndex); 
+	});
+	$('.components a').click(function () {
+	    var currentIndex = $(this).attr('data-slick-index');
 		$('.dashboard-carousel').slick('slickGoTo', currentIndex); 
 	});
 	

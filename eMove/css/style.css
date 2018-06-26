@@ -102,6 +102,8 @@ header {
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 50px; }
+.profile .advantage, .profile .favorite, .profile .connexion, .profile .information, .profile .plan {
+  display: none; }
 .profile .col-sm-3 {
   padding: 20px; }
   .profile .col-sm-3 + div {
@@ -117,6 +119,8 @@ header {
 /****************************************************************/
 .reservation {
   padding: 50px; }
+  .reservation .identity_card {
+    display: none; }
 
 .resume {
   padding: 50px;
@@ -214,7 +218,7 @@ header {
 /************************** FANCYBOX ****************************/
 /****************************************************************/
 .fancybox-lock .fancybox-overlay {
-  background: #000000db; }
+  /*background: #000000db;*/ }
 
 .fancybox-close {
   background: url(../img/cross.png) no-repeat;
@@ -338,7 +342,8 @@ header {
   color: #FFF;
   margin-left: -15px;
   margin-right: -15px;
-  padding: 40px 15px; }
+  padding: 40px 15px;
+  margin-bottom: -24px; }
   .contact .row {
     margin: 0px; }
     .contact .row .infos {
@@ -360,8 +365,7 @@ header {
 .small-footer {
   text-align: center;
   background: #222;
-  color: #FFF;
-  margin-top: 20px !important; }
+  color: #FFF; }
   .small-footer a {
     color: #FFF; }
   .small-footer .py-5 {

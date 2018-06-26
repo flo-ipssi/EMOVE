@@ -1,19 +1,7 @@
 <?php
-	include 'config/functions.php';
+  include 'config/functions.php';
+  require 'blocs/head.php'; 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>eMove - Location de voiture et scooter</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" >
-	<link rel="stylesheet" href="css/font-awesome.min.css" >
-	<link rel="stylesheet" href="css/owl.carousel.min.css"> 
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="js/jquery-3.3.1.min.js"></script>
-
-</head>
 <body>
 	<header>
 		<nav  class="container">
@@ -128,8 +116,8 @@
 
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                <label class="custom-control-label" for="credit">Carte de crédit</label>
+                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input credit" required="">
+                <label class="custom-control-label credit" for="credit">Carte de crédit</label>
               </div>
               <div class="custom-control custom-radio">
                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
@@ -140,7 +128,7 @@
                 <label class="custom-control-label" for="paypal">Paypal</label>
               </div>
             </div>
-            <div class="row">
+            <div class="row identity_card">
               <div class="col-md-6 mb-3">
                 <label for="cc-name">Nom sur la carte</label>
                 <input type="text" class="form-control" name="cc-name" placeholder="" required="">
@@ -157,7 +145,7 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="row identity_card">
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Expiration</label>
                 <input type="text" class="form-control" name="cc-expiration" placeholder="" required="">

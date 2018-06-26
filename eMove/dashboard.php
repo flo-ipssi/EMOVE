@@ -93,10 +93,10 @@
 	            <h3>Admin</h3>
 	        </div>
 	        <ul class="list-unstyled components">
-	            <a href="#"><li>Utilisateur</li></a>
-	            <a href="#"><li>Véhicule</li></a>
-	            <a href="#"><li>Messageries</li></a>
-	            <a href="#"><li>Mes ventes</li></a>
+	            <a href="#" data-slick-index="2"><li>Utilisateur</li></a>
+	            <a href="#" data-slick-index="3"><li>Véhicule</li></a>
+	            <a href="#" data-slick-index="1"><li>Messageries</li></a>
+	            <a href="#" data-slick-index="0"><li>Mes ventes</li></a>
 	        </ul>
 	    </nav>
 
@@ -183,6 +183,25 @@
 					      <td>@mdo</td>
 					      <td>Mark</td>
 					      <td>Otto</td>
+					      <td>Otto</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				<div> 
+				    <h2>Message</h2>
+				    <table class="table">
+					  <thead class="thead-light">
+					    <tr>
+						    <th scope="col">Véhicule</th>
+						    <th scope="col">Locataire</th>
+						    <th scope="col">Suivi</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+					      <td>Mark</td>
 					      <td>Otto</td>
 					    </tr>
 					  </tbody>

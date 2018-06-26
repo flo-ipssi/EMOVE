@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>eMove - Location de voiture et scooter</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" >
-	<link rel="stylesheet" href="css/font-awesome.min.css" >
-	<link rel="stylesheet" href="css/owl.carousel.min.css"> 
-	<link rel="stylesheet" href="css/fancybox.min.css" media="screen">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/fancybox.min.js"></script>
-
-</head>
+<?php
+	include 'config/functions.php';
+	require 'blocs/head.php'; 
+?>
 <body>
 	<!-- Navigation -->
   	<header>
@@ -139,11 +128,27 @@
 					      		<td>the Bird</td>
 					      		<td>@twitter</td>
 					    	</tr>
+					    	<tr>
+					      		<td>the Bird</td>
+					      		<td>@twitter</td>
+					    	</tr>
+					    	<tr>
+					      		<td>the Bird</td>
+					      		<td>@twitter</td>
+					    	</tr>
+					    	<tr>
+					      		<td>the Bird</td>
+					      		<td>@twitter</td>
+					    	</tr>
+					    	<tr>
+					      		<td>the Bird</td>
+					      		<td>@twitter</td>
+					    	</tr>
 					  	</tbody>
 					</table>
-				  	<p class="lead">
+				  	<!--<p class="lead">
 				    	<a class="btn btn-primary btn-lg" href="#" role="button">Plus</a>
-				  	</p>
+				  	</p>-->
 				</div>
 	          	<div class="card card-outline-secondary my-5">
 	            	<div class="card-header">
@@ -209,6 +214,7 @@
   	<?php require 'blocs/modal.php' ?>
   	<!-- Modal-->
 	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/fancybox.min.js"></script>
 	<script src="js/api.js" ></script>
 	<script src="js/popper.min.js" ></script>
 	<script src="js/bootstrap-datepicker.min.js" ></script>

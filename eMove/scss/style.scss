@@ -149,6 +149,10 @@ header{
     }
   }
 
+  .advantage, .favorite, .connexion, .information, .plan{
+    display:none
+  }
+
   .col-sm-3{
     padding: 20px;
     + div{
@@ -173,6 +177,10 @@ header{
 /****************************************************************/
 .reservation{
   padding: 50px;
+
+  .identity_card{
+    display: none;
+  }
 }
 
 .resume{
@@ -323,7 +331,7 @@ header{
 /****************************************************************/
 
 .fancybox-lock .fancybox-overlay{
-  background: #000000db;
+  /*background: #000000db;*/
 }
 
 .fancybox-close {
@@ -493,6 +501,7 @@ header{
   margin-left: -15px;
   margin-right: -15px;
   padding: 40px 15px;
+  margin-bottom: -24px;
   .row{
     margin:0px;
     .infos{
@@ -522,7 +531,6 @@ header{
   text-align:center;
   background: #222;
   color: #FFF;
-  margin-top: 20px !important;
 
   a{
     color: #FFF;

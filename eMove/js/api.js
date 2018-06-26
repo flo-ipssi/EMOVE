@@ -40,9 +40,34 @@ $( document ).ready(function() {
         $('#sidebar').toggleClass('active');
         $('#content').toggleClass('active');
     });
+
+
+	$('.reservation .custom-radio').click(function() {
+  		if($('#credit').is(':checked')) { 
+  			$( ".identity_card" ).css( "display", "flex" );
+  		}else{
+  			$( ".identity_card" ).css( "display", "none" );
+  		}
+	});
+
+	$('.components a').click(function () {
+	    var currentIndex = $(this).attr('data-slick-index');
+	    console.log(currentIndex);
+		$('.dashboard-carousel').slick('slickGoTo', currentIndex); 
+	});
+
+
+	$('.profile .col-sm-3 .list-group a').click(function(){
+	    var data = $(this).attr('data');
+	    $('.col-sm-9 .jumbotron-fluid').hide();
+	    $('.' + data).show();
+
+	})
+
 	
 	$(".gallery_image").fancybox({
 		'hideOnContentClick': true
 	});
+
 });
 
