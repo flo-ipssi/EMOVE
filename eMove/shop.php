@@ -4,42 +4,9 @@
 ?>
 <body>
 	<!-- Navigation -->
-  <header>
-		<nav  class="container">
-      <div class="row">
-        <div class="col-sm-2">
-          <a href="/"><img src="img/logo.png" /></a>
-        </div>
-        <div class="col-sm-6">
-          <form>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="text" class="form-control-plaintext bar_search" placeholder="Search..." name="search">
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-sm-4">
-          <ul>
-            <!-- <li><button type="button"  data-toggle="modal" data-target="#insription">Inscription</button></li>
-            <li> | </li>
-            <li><button type="button"  data-toggle="modal" data-target="#connexion">Connexion</button></li>
-            <li><a href="#"><img src="img/user.png" alt="" /></a></li> -->
-            <li><a href="#">Véhicule</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil <i class="fa fa-user" aria-hidden="true"></i></a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Profil</a>
-                <a class="dropdown-item" href="#">Commandes</a>
-                <div class="dropdown-divider"></div>
-                <button type="button" class="btn btn-danger">Déconnexion</button>
-              </div>
-            </li>
-          </ul>         
-        </div>
-      </div>
-		</nav>
-	</header>
+  <?php
+    require 'blocs/navigation.php'; 
+  ?>
     <!-- Page Content -->
     <div class="container-fluid shop">
 
@@ -76,7 +43,7 @@
         <!-- /.col-lg-2 -->
 
         <div class="col-lg-10">
-
+          <div class="feed"></div>
           <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -130,6 +97,24 @@
             </div>
 
           </div>
+
+          <div class="row">
+            <p id="content">Dynamic page content</p>
+            <p id="pagination-here"></p>
+            <script>
+                // init bootpag
+                $('#pagination-here').bootpag({
+                    total: 7,          // total pages
+                    page: 1,            // default page
+                    maxVisible: 5,     // visible pagination
+                    leaps: true         // next/prev leaps through maxVisible
+                }).on("page", function(event, num){
+                    $("#content").html("Page " + num); // or some ajax content loading...
+                    // ... after content load -> change total to 10
+                    $(this).bootpag({total: 10, maxVisible: 10});
+                });
+            </script>
+          </div>
           <!-- /.row -->
 
         </div>
@@ -176,8 +161,9 @@
 	<!-- Modal -->
   	<?php require 'blocs/modal.php' ?>
   	<!-- Modal-->
-	<script src="js/owl.carousel.min.js"></script>
   <script src="js/api.js" ></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/fancybox.min.js"></script>
   <script src="js/popper.min.js" ></script>
   <script src="js/bootstrap-datepicker.min.js" ></script>
   <script src="js/bootstrap.min.js"></script>

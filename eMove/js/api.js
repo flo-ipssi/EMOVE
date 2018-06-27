@@ -1,6 +1,25 @@
 
-// A $( document ).ready() block.
 $( document ).ready(function() {
+
+	/*******************************************************/
+	/************************ INPUT ************************/
+	/*******************************************************/
+
+	var countries = [
+	   { value: 'Andorra', data: 'AD' },
+	   { value: 'Zimbabwe', data: 'ZZ' }
+	];
+
+	$('.bar_search input').autocomplete({
+	    lookup: countries,
+	    onSelect: function (suggestion) {
+	        console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+	    }
+	});
+	
+	/*******************************************************/
+	/************************ INPUT ************************/
+	/*******************************************************/
 	$('.date input').datepicker({
 		format: "dd/mm/yyyy",
 	    startDate: "today",
@@ -16,6 +35,22 @@ $( document ).ready(function() {
 		language: "fr",
 		todayHighlight: true,
 	});
+
+	/*******************************************************/
+	/******************* RESERVATION ***********************/
+	/*******************************************************/
+
+	$('.reservation .custom-radio').click(function() {
+  		if($('#credit').is(':checked')) { 
+  			$( ".identity_card" ).css( "display", "flex" );
+  		}else{
+  			$( ".identity_card" ).css( "display", "none" );
+  		}
+	});
+
+	/*******************************************************/
+	/************ SLICK/OWL-CAROUSSEL/FANCYBOX *************/
+	/*******************************************************/
 	$(".owl-carousel").owlCarousel({
 		loop:true,
 	    margin:10,
@@ -36,26 +71,19 @@ $( document ).ready(function() {
 	    }
 	});
 
-	$('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        $('#content').toggleClass('active');
-    });
-
-
-	$('.reservation .custom-radio').click(function() {
-  		if($('#credit').is(':checked')) { 
-  			$( ".identity_card" ).css( "display", "flex" );
-  		}else{
-  			$( ".identity_card" ).css( "display", "none" );
-  		}
-	});
-
 	$('.components a').click(function () {
 	    var currentIndex = $(this).attr('data-slick-index');
 	    console.log(currentIndex);
 		$('.dashboard-carousel').slick('slickGoTo', currentIndex); 
 	});
 
+	$(".gallery_image").fancybox({
+		'hideOnContentClick': true
+	});
+
+	/*******************************************************/
+	/********************** PROFILE  ***********************/
+	/*******************************************************/
 
 	$('.profile .col-sm-3 .list-group a').click(function(){
 	    var data = $(this).attr('data');
@@ -63,11 +91,6 @@ $( document ).ready(function() {
 	    $('.' + data).show();
 
 	})
-
-	
-	$(".gallery_image").fancybox({
-		'hideOnContentClick': true
-	});
 
 });
 

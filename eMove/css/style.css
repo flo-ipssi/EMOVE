@@ -66,6 +66,9 @@ header {
         border: 0px;
         border-bottom: 1px solid #ff9d3d;
         box-shadow: 0 0 0px #ff9d3d; }
+    header nav form button {
+      margin-top: 8px;
+      font-size: 14px; }
   header nav .dropdown-menu.show {
     margin-top: 10px;
     border: 1px solid #ff9d3d; }
@@ -400,6 +403,31 @@ header {
     transition: color .2s, background .2s, border .2s, ease-out .2s; }
     .small-footer .fa-pinterest:hover {
       color: #cb2027; }
+
+/****************************************************************/
+/*************************  SUGGESTION **************************/
+/****************************************************************/
+.autocomplete-suggestions {
+  border: 1px solid #999;
+  background: #FFF;
+  overflow: auto; }
+  .autocomplete-suggestions strong {
+    font-weight: normal;
+    color: #3399FF; }
+
+.autocomplete-suggestion {
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.autocomplete-selected {
+  background: #F0F0F0; }
+
+.autocomplete-group {
+  padding: 2px 5px; }
+  .autocomplete-group strong {
+    display: block;
+    border-bottom: 1px solid #000; }
 
 /****************************************************************/
 /****************************  MODAL ****************************/

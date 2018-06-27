@@ -4,7 +4,7 @@
 ?>
 <body>
 	<header>
-		<nav  class="container">
+		<nav class="container">
 			<a href="/"><img src="img/logo.png" /></a>
 			<ul>
 				<li><button type="button"  data-toggle="modal" data-target="#insription">Inscription</button></li>

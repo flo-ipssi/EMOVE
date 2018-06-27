@@ -92,6 +92,10 @@ header{
             box-shadow: 0 0 0px $color;
         }
       }
+      button{
+        margin-top: 8px;
+        font-size: 14px;
+      }
     }
     .dropdown-menu.show {
       margin-top: 10px;
@@ -587,6 +591,32 @@ header{
         color: #cb2027;
       }
     }
+}
+
+
+/****************************************************************/
+/*************************  SUGGESTION **************************/
+/****************************************************************/
+.autocomplete-suggestions { 
+  border: 1px solid #999; 
+  background: #FFF; overflow: auto; 
+  strong { 
+    font-weight: normal; color: #3399FF; 
+  }
+}
+.autocomplete-suggestion { 
+  padding: 2px 5px;
+  white-space: nowrap; 
+  overflow: hidden; 
+}
+
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-group { 
+  padding: 2px 5px; 
+  strong { 
+    display: block; 
+    border-bottom: 1px solid #000; 
+  }
 }
 
 
