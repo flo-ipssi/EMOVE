@@ -12,13 +12,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">@</span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Email" name="Email" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" placeholder="Password" name="Password" aria-describedby="basic-addon1">
           </div>
           <input type="submit" id="btn-connexion" class="btn btn-success btn-lg btn-block" value="Connexion">
         </form>
@@ -48,13 +48,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Prenom" name="Prenom" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Nom" name="Nom" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group date naissance">
@@ -65,25 +65,25 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Adresse" aria-label="Adresse" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Adresse" name="Adresse" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Numero" aria-label="Numero" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Numero" name="Numero" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" placeholder="Password" name="Password" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="Confirmer le mot de passe" aria-label="Confirmer le mot de passe" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" placeholder="Confirmer le mot de passe" name="Confirmer le mot de passe" aria-describedby="basic-addon1">
           </div>
           <input type="submit" id="btn-inscription" class="btn btn-success btn-lg btn-block" value="Inscription">
         </form>

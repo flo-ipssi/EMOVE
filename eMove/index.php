@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>eMove - Location de voiture et scooter</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" >
-	<link rel="stylesheet" href="css/font-awesome.min.css" >
-	<link rel="stylesheet" href="css/owl.carousel.min.css"> 
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="js/jquery-3.3.1.min.js"></script>
-
-</head>
+<?php
+	include 'config/functions.php';
+	require 'blocs/head.php'; 
+?>
 <body>
 	<header>
-		<nav  class="container">
+		<nav class="container">
 			<a href="/"><img src="img/logo.png" /></a>
 			<ul>
 				<li><button type="button"  data-toggle="modal" data-target="#insription">Inscription</button></li>
@@ -200,7 +191,7 @@
 					    <label for="message">Message</label>
 						<textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
 					</div>
-					<button class="btn btn-primary" type="submit">Submit</button>
+					<button class="btn btn-primary" type="submit">Envoyer</button>
 				</div>
 			</form>
 			<hr>
