@@ -6,6 +6,8 @@ namespace Application;
 
 use Application\Container;
 
+use Zend\ServiceManager;
+
 final class  Application
 {
     private $container;
@@ -16,12 +18,12 @@ final class  Application
     {
         $config = require  __DIR__.'/../config/application.config.php';
         $this->container = new Container($config);
-
+        //var_dump($this->container);die;
         $this->router = $this->container->get(Router::class);
     }
 
     public function dispatch(string  $requestUri) : string
     {
-        return ()
+        return ($this->container->get($this->router->resolve($requestUri)))->indexAction();
     }
 }

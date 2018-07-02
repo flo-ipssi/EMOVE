@@ -29,6 +29,7 @@ final class Container
     public function get(string $key) : object
     {
         if(!$this->has($key)){
+            var_dump($this->config);die;
             throw new Exception("Service {$key} not found");
         }
 
