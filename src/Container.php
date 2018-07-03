@@ -4,9 +4,8 @@ declare(strict_types = 1);
 
 namespace  Application;
 
-use Exception;
 
-final class Container
+class Container
 {
     private  $config;
 
@@ -21,18 +20,15 @@ final class Container
 
     public function has(string $key) : bool
     {
-        return isset(
-            $this->config[$key]
-        );
+        return isset($this->config[$key]);
     }
 
     public function get(string $key) : object
     {
         if(!$this->has($key)){
-            var_dump($this->config);die;
-            throw new Exception("Service {$key} not found");
+            var_dump($this->config);
+            throw new \Exception("Service {$key} not found");
         }
-
         return $this->config[$key];
     }
 }

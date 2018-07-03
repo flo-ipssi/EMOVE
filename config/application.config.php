@@ -21,6 +21,6 @@ return [
         DateTimeImmutable::class => DateTimeImmutableFactory::class,
         ParseUriHelper::class => ParseUriHelperFactory::class,
 
-    ]
+    ],
 
 ];

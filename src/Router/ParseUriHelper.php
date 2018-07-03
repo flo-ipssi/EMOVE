@@ -18,7 +18,7 @@ final class ParseUriHelper
     {
     }
 
-    public function  parseUri($requestUri)
+    public function  parseRequestUri($requestUri)
     {
         if($requestUri[0] === '/'){
             $requestUri = substr($requestUri, 1);
@@ -32,6 +32,7 @@ final class ParseUriHelper
 
         $requestedFile = ucfirst($requestedFile);
 
-        return "Application\Controller\\{$requestedFile}Controller";
+        //return "Application\Controller\\{$requestedFile}Controller";
+        return  "Application\Controller\\". $requestedFile ."Controller";
     }
-}ÒæÂê®†ÚºîœπôÙ≠÷…∞~~@@≠÷…∞∞~~~◊w
+}

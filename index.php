@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(-1);
+//error_reporting(-1);
 //function chargerClass($class){
 ////    if(file_exists( __DIR__.'src/'.$class.'.php')){
 ////        require __DIR__.'src/'.str_replace('\\', '/', $class).'.php';
