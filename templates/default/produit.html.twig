@@ -1,0 +1,116 @@
+
+{% extends "layout/layout.html.twig" %}
+{% block content %}
+
+<div class="container-fluid shop product">
+    <div class="row">
+        <div class="col-lg-2">
+            <form method="post">
+                <div class="list-group">
+                    <a href="#vehiculetype" class="list-group-item" data-toggle="collapse" href="#vehiculetype" role="button" aria-expanded="false" aria-controls="vehiculetype">Vehicule</a>
+                    <div class="collapse" id="vehiculetype">
+                        <ul class="list-group">
+                            <li class="list-group-item ">
+                                <input type="checkbox" aria-label="Choix"> Choix
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#km" class="list-group-item" data-toggle="collapse" href="#km" role="button" aria-expanded="false" aria-controls="km">Kilometrage</a>
+                    <div class="collapse" id="km">
+                        <ul class="list-group">
+                            <li class="list-group-item ">
+                                <input type="checkbox" aria-label="Choix"> Choix
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#price" class="list-group-item" data-toggle="collapse" href="#price" role="button" aria-expanded="false" aria-controls="price">Prix</a>
+                    <div class="collapse" id="price">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id=""><i class="fas fa-euro-sign"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Min">
+                            <input type="text" class="form-control" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-10 ">
+            <div class="card mt-4">
+                <div id="productControl" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a class="gallery_image" href="{{ asset(vehicule.image) }}"><img class="d-block w-100" src="{{ asset(vehicule.image) }}" alt=""></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a class="gallery_image" href="{{ asset(vehicule.image) }}"><img class="d-block w-100" src="{{ asset(vehicule.image) }}" alt=""></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a class="gallery_image" href="{{ asset(vehicule.image) }}"><img class="d-block w-100" src="{{ asset(vehicule.image) }}" alt=""></a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#productControl" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#productControl" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-primary booking" href="#" role="button">Réservation</a>
+                    <h3 class="card-title">{{ vehicule.modele }}</h3>
+                    <h4>{{ vehicule.prixachat }} €</h4>
+                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                    4.0 stars
+                </div>
+            </div>
+            <!-- /.card -->
+            <div class="jumbotron">
+                <h1 class="display-4">Caractéristiques</h1>
+                <hr class="my-3">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Caractéristique</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Couleur</td>
+                        <td>{{ vehicule.couleur }}</td>
+                    </tr>
+                    <tr>
+                        <td>Numero de Série</td>
+                        <td>{{ vehicule.numserie }}</td>
+                    </tr>
+                    <tr>
+                        <td>Plaque d'immatriculation</td>
+                        <td>{{ vehicule.plaqueimma }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de Kilométrage</td>
+                        <td>{{ vehicule.nbkm }}</td>
+                    </tr>
+                    <tr>
+                        <td>Date d'achat</td>
+                        <td>{{ vehicule.dateachat|date('Y-m-d') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Prix d'achat</td>
+                        <td>{{ vehicule.prixachat }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--<p class="lead">
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Plus</a>
+                </p>-->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col-lg-9 -->
+    </div>
+</div>
+    {% endblock %}
