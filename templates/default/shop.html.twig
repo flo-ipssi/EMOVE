@@ -3,72 +3,11 @@
 {% block content %}
 <div class="container-fluid shop">
     <div class="row">
-        <div class="col-lg-2">
-            <form method="get">
-                <div class="list-group">
-                <a href="#agence" class="list-group-item" data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="agence">Agence</a>
-                <div class="collapse" id="agence">
-                    <ul class="list-group">
-                        <li class="list-group-item "><input type="checkbox" name="agence" value="1"> Paris</li>
-                        <li class="list-group-item "><input type="checkbox" name="agence" value="2"> Lyon</li>
-                    </ul>
-                </div>
-
-                <a href="#vehiculetype" class="list-group-item" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="vehiculetype">Vehicule</a>
-                <div class="collapse" id="vehiculetype">
-                    <ul class="list-group">
-                        <li class="list-group-item "><input type="checkbox" name="vehicule" value="1"> Scooter</li>
-                        <li class="list-group-item "><input type="checkbox" name="vehicule" value="2"> Voiture</li>
-                    </ul>
-                </div>
-
-                <a href="#km" class="list-group-item" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="km">Kilometrage</a>
-                <div class="collapse" id="km">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id=""><i class="fa fa-road" aria-hidden="true"></i></span>
-                        </div>
-                        <input type="text" class="form-control" name="km_min" placeholder="Min" pattern="[0-9]">
-                        <input type="text" class="form-control" name="km_max" placeholder="Max" pattern="[0-9]">
-                    </div>
-                </div>
-
-                <a href="#price" class="list-group-item" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="price">Prix</a>
-                <div class="collapse" id="price">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id=""><i class="fas fa-euro-sign"></i></span>
-                        </div>
-                        <input type="text" class="form-control" name="price_min" placeholder="Min" pattern="[0-9]">
-                        <input type="text" class="form-control" name="price_max" placeholder="Max" pattern="[0-9]">
-                    </div>
-                </div>
-
-
-                <a href="#color" class="list-group-item" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="color">Couleurs</a>
-                <div class="collapse" id="color">
-                    <ul class="list-group">
-                        <li class="list-group-item ">
-                            <input type="checkbox" name="color"> Blanc
-                            <input type="checkbox" name="color"> Noir
-                            <input type="checkbox" name="color"> Gris
-                            <input type="checkbox" name="color"> Beige
-                            <input type="checkbox" name="color"> Marron
-                            <input type="checkbox" name="color"> Bleu
-                            <input type="checkbox" name="color"> Rouge
-                            <input type="checkbox" name="color"> Jaune
-                            <input type="checkbox" name="color"> Vert
-                            <input type="checkbox" name="color"> Rose
-                        </li>
-                    </ul>
-                </div>
-            </div>
-                <input class="btn btn-warning" type="submit" value="Trier">
-            </form>
-            {% include 'layout/filter.html.twig' %}
-        </div>
         <!-- /.col-lg-2 -->
+        <div class="col-lg-2">
+        {{ render(controller('App\\Controller\\VehiculeController::filterColAction')) }}
 
+        </div>
         <div class="col-lg-10">
             <div class="feed"></div>
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">

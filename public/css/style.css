@@ -28,60 +28,66 @@ header {
   border-bottom: 4px solid #ff9d3d; }
   header img {
     max-height: 80px; }
-  header nav ul {
-    float: right;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 15px;
-    font-size: 23px; }
-    header nav ul li {
-      font-family: "Century Gothic", sans-serif;
-      font-weight: 600;
-      display: inline-block;
-      margin: 5px 8px;
-      padding: 0; }
-      header nav ul li button, header nav ul li a {
-        cursor: pointer;
-        background: none;
-        border: 0px;
-        color: #ff9d3d;
-        text-decoration: none; }
-        header nav ul li button:hover, header nav ul li a:hover {
-          text-decoration: none;
-          color: #6a6a6a; }
-      header nav ul li img {
-        margin-top: -10px;
-        height: 25px; }
-  header nav form {
-    margin-top: 20px; }
-    header nav form input[type="text"] {
-      border: 0px;
-      color: #212529;
-      border-bottom: 1px solid #ff9d3d;
-      border-radius: 0px; }
-      header nav form input[type="text"]:focus {
-        color: #212529;
-        outline: none !important;
-        border: 0px;
-        border-bottom: 1px solid #ff9d3d;
-        box-shadow: 0 0 0px #ff9d3d; }
-    header nav form button {
+    @media screen and (max-width: 992px) {
+      header img {
+        width: 100px;
+        margin-top: 10px; } }
+  header nav {
+    max-width: 1000px; }
+    header nav ul {
       float: right;
-      position: absolute;
-      margin: 10px 15px; }
-  header nav .dropdown-menu.show {
-    margin-top: 10px;
-    border: 1px solid #ff9d3d; }
-    header nav .dropdown-menu.show a.dropdown-item {
-      padding: 10px 1.5rem; }
-      header nav .dropdown-menu.show a.dropdown-item:hover {
-        color: #FFF;
-        background: #ff9d3d; }
-      header nav .dropdown-menu.show a.dropdown-item:click {
-        background: #ff9d3d; }
-    header nav .dropdown-menu.show .btn-danger {
-      width: 100%; }
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 15px;
+      font-size: 23px; }
+      header nav ul li {
+        font-family: "Century Gothic", sans-serif;
+        font-weight: 600;
+        display: inline-block;
+        margin: 5px 8px;
+        padding: 0; }
+        header nav ul li button, header nav ul li a {
+          cursor: pointer;
+          background: none;
+          border: 0px;
+          color: #ff9d3d;
+          text-decoration: none; }
+          header nav ul li button:hover, header nav ul li a:hover {
+            text-decoration: none;
+            color: #6a6a6a; }
+        header nav ul li img {
+          margin-top: -10px;
+          height: 25px; }
+    header nav form {
+      margin-top: 20px; }
+      header nav form input[type="text"] {
+        border: 0px;
+        color: #212529;
+        border-bottom: 1px solid #ff9d3d;
+        border-radius: 0px; }
+        header nav form input[type="text"]:focus {
+          color: #212529;
+          outline: none !important;
+          border: 0px;
+          border-bottom: 1px solid #ff9d3d;
+          box-shadow: 0 0 0px #ff9d3d; }
+      header nav form button {
+        float: right;
+        position: absolute;
+        margin: 10px 15px; }
+    header nav .dropdown-menu.show {
+      margin-top: 10px;
+      border: 1px solid #ff9d3d; }
+      header nav .dropdown-menu.show a.dropdown-item {
+        padding: 10px 1.5rem; }
+        header nav .dropdown-menu.show a.dropdown-item:hover {
+          color: #FFF;
+          background: #ff9d3d; }
+        header nav .dropdown-menu.show a.dropdown-item:active {
+          background: #ff9d3d; }
+      header nav .dropdown-menu.show .btn-danger {
+        width: 100%; }
   header + div {
     margin-top: 80px;
     min-height: 72vh; }
@@ -140,14 +146,69 @@ header {
   padding: 10px; }
 .shop .col-lg-2 {
   padding-top: 25px; }
-  .shop .col-lg-2 input[type="submit"] {
+  .shop .col-lg-2 .list-group #km div .input-group-prepend {
+    display: inline-block;
+    float: left;
+    width: 16%;
+    min-height: 38px;
+    text-align: center; }
+    .shop .col-lg-2 .list-group #km div .input-group-prepend span {
+      min-height: 38px;
+      font-size: 21px;
+      margin: auto;
+      border: 2px solid #ff9e57; }
+  .shop .col-lg-2 .list-group #km div:nth-child(2) {
+    display: inline-block;
+    text-align: center;
+    float: left;
+    width: 42%; }
+  .shop .col-lg-2 .list-group #km div:nth-child(3) {
+    display: inline-block;
+    text-align: center;
+    float: right;
+    width: 42%; }
+  .shop .col-lg-2 .list-group #km div label {
+    display: none; }
+  .shop .col-lg-2 .list-group #price div .input-group-prepend {
+    display: inline-block;
+    float: left;
+    width: 16%;
+    font-size: 24px;
+    margin: auto;
+    min-height: 38px;
+    text-align: center; }
+    .shop .col-lg-2 .list-group #price div .input-group-prepend span {
+      font-size: 21px;
+      margin: auto;
+      min-height: 38px;
+      border: 2px solid #ff9e57; }
+  .shop .col-lg-2 .list-group #price div:nth-child(2) {
+    display: inline-block;
+    text-align: center;
+    float: left;
+    width: 42%; }
+  .shop .col-lg-2 .list-group #price div:nth-child(3) {
+    display: inline-block;
+    text-align: center;
+    float: right;
+    width: 42%; }
+  .shop .col-lg-2 .list-group #price div label {
+    display: none; }
+  .shop .col-lg-2 .list-group #color div, .shop .col-lg-2 .list-group #agence div, .shop .col-lg-2 .list-group #vehiculetype div {
+    display: inline-block; }
+    .shop .col-lg-2 .list-group #color div label, .shop .col-lg-2 .list-group #color div input, .shop .col-lg-2 .list-group #agence div label, .shop .col-lg-2 .list-group #agence div input, .shop .col-lg-2 .list-group #vehiculetype div label, .shop .col-lg-2 .list-group #vehiculetype div input {
+      float: left;
+      margin: 0px 2px; }
+    .shop .col-lg-2 .list-group #color div input, .shop .col-lg-2 .list-group #agence div input, .shop .col-lg-2 .list-group #vehiculetype div input {
+      margin-top: 6px; }
+  .shop .col-lg-2 button {
     margin: 10px auto;
     width: 100%;
     font-weight: 900;
     text-transform: uppercase;
     background-color: #ff9d3d;
     border-color: #ff9d3d; }
-    .shop .col-lg-2 input[type="submit"]:hover {
+    .shop .col-lg-2 button:hover {
       background-color: #ff9e57;
       border-color: #ff9e57; }
 .shop .my-4 {
@@ -259,6 +320,9 @@ header {
   right: 0;
   margin-left: auto;
   margin-right: auto; }
+  @media screen and (max-width: 992px) {
+    .search {
+      transform: translate(0%, 30%); } }
   .search h2 {
     text-align: center;
     color: #ff9d3d;
@@ -266,6 +330,9 @@ header {
   .search label {
     width: 100%;
     font-size: 24px; }
+    @media screen and (max-width: 768px) {
+      .search label {
+        font-size: 21px; } }
   .search input {
     max-height: 38px; }
   .search button {

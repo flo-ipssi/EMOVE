@@ -22,6 +22,14 @@ $color1: #6a6a6a;
 $colorlight: #ff9e57;
 $colordark: #e26000;
 
+
+$phone-devices: 320px;
+$small-devices: 576px;
+$medium-devices: 768px;
+$large-devices: 992px;
+$extra-large-devices: 1200px;
+
+
 /****************************************************************/
 /***************************** CSS ******************************/
 /****************************************************************/
@@ -45,8 +53,13 @@ header{
   border-bottom: 4px solid $color;
   img{
     max-height:80px;
+    @media screen and (max-width: $large-devices) {
+      width: 100px;
+      margin-top: 10px;
+    }
   }
   nav{
+    max-width: 1000px;
     ul{
       float:right;
       list-style: none;
@@ -77,28 +90,30 @@ header{
         }
       }
 
-      form{
-        margin-top: 20px;
-        input[type="text"]{
-          border: 0px;
+    }
+
+    form{
+      margin-top: 20px;
+      input[type="text"]{
+        border: 0px;
+        color: #212529;
+        border-bottom: 1px solid $color;
+        border-radius: 0px;
+        &:focus{
           color: #212529;
+          outline: none !important;
+          border:0px;
           border-bottom: 1px solid $color;
-          border-radius: 0px;
-          &:focus{
-            color: #212529;
-            outline: none !important;
-            border:0px;
-            border-bottom: 1px solid $color;
-            box-shadow: 0 0 0px $color;
-          }
-        }
-        button{
-          float: right;
-          position: absolute;
-          margin: 10px 15px;
+          box-shadow: 0 0 0px $color;
         }
       }
-    }
+      button{
+        float: right;
+        position: absolute;
+        margin: 10px 15px;
+      }
+  }
+
     .dropdown-menu.show {
       margin-top: 10px;
       border: 1px solid $color;
@@ -213,9 +228,95 @@ header{
     padding-top: 25px;
 
     .list-group{
+      #km{
+        div{
+          .input-group-prepend{
+            display: inline-block;
+            float: left;
+            width: 16%;
+            min-height: 38px;
+            text-align: center;
+            span{
+              min-height: 38px;
+              font-size: 21px;
+              margin: auto;
+              border: 2px solid $colorlight;
+            }
+          }
+          &:nth-child(2){
+            display: inline-block;
+            text-align: center;
+            float: left;
+            width: 42%;
+          }
+          &:nth-child(3){
+            display: inline-block;
+            text-align: center;
+            float: right;
+            width: 42%;
+          }
+          label{
+            display: none;
+          }
+          input{
+          }
+        }
 
+
+      }
+      #price{
+        div{
+          .input-group-prepend{
+            display: inline-block;
+            float: left;
+            width: 16%;
+            font-size: 24px;
+            margin: auto;
+            min-height: 38px;
+            text-align: center;
+            span{
+              font-size: 21px;
+              margin: auto;
+              min-height: 38px;
+              border: 2px solid $colorlight;
+            }
+          }
+          &:nth-child(2){
+            display: inline-block;
+            text-align: center;
+            float: left;
+            width: 42%;
+          }
+          &:nth-child(3){
+            display: inline-block;
+            text-align: center;
+            float: right;
+            width: 42%;
+          }
+          label{
+            display: none;
+          }
+          input{
+          }
+        }
+
+
+      }
+
+      #color, #agence, #vehiculetype{
+        div{
+          display: inline-block;
+          label, input{
+            float: left;
+            margin: 0px 2px;
+          }
+          input{
+            margin-top: 6px;
+          }
+        }
+      }
     }
-    input[type="submit"]{
+    button{
       margin: 10px auto;
       width: 100%;
       font-weight: 900;
@@ -301,6 +402,7 @@ header{
 }
 
 
+
 .product{
   .card{
     .carousel{
@@ -379,10 +481,13 @@ header{
     border-radius: 10px;
     border: 2px inset $color;
     color: #EEE;
-        left: 0;
+    left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: $large-devices) {
+      transform: translate(0%, 30%);
+    }
 
     h2{
       text-align:center;
@@ -393,6 +498,9 @@ header{
     label{
       width: 100%;
       font-size: 24px;
+      @media screen and (max-width: $medium-devices) {
+        font-size: 21px;
+      }
     }
     
     input{
