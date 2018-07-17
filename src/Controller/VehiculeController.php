@@ -13,6 +13,7 @@ use App\Entity\TypeVehicule;
 use App\Entity\Vehicule;
 use App\Form\VehiculeForm;
 use App\Manager\VehiculeManager;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -31,48 +32,13 @@ class VehiculeController extends AbstractController
      */
     public function listAction()
     {
+
         $em = $this->getDoctrine()->getManager();
         $vehicules = $em->getRepository(Vehicule:: class)
             ->findAll();
-        $form = $this->createFormBuilder()
-            ->add('Paris', CheckboxType::class, [
-                'mapped' => Agence::class,
-            ])
-            ->add('Lyon', CheckboxType::class, [
-                'mapped' => Agence::class,
-            ])
-            ->add('Voiture', CheckboxType::class, [
-                'mapped' => TypeVehicule::class,
-            ])
-            ->add('Scooter', CheckboxType::class, [
-                'mapped' => TypeVehicule::class,
-            ])
-            ->add('Km_Min',TextType::class, array(
-                'attr' => array(
-                    'placeholder' => 'Min',
-                )))
-            ->add('Km_Max',TextType::class, array(
-                'attr' => array(
-                    'placeholder' => 'Max'
-                )))
-            ->add('Price_Min',TextType::class, array(
-                'attr' => array(
-                    'placeholder' => 'Min'
-                )))
-            ->add('Price_Max',TextType::class, array(
-                'attr' => array(
-                    'placeholder' => 'Max'
-                )))
-            ->add('Trie',SubmitType::class, array(
-                'attr' => array(
-                    'class' => 'btn btn-warning'
-                )
-            ))
-            ->setAction($this->generateUrl('filter'))
-            ->getForm();
+
         return $this->render('default/shop.html.twig', [
-            'vehicules' => $vehicules,
-            'form' => $form->createView()
+            'vehicules' => $vehicules
         ]);
     }
 
@@ -131,13 +97,27 @@ class VehiculeController extends AbstractController
     public function filterVehicule(Request $request, VehiculeManager $vehiculeManager)
     {
         $em = $this->getDoctrine()->getManager();
-        $agence = $request->request->get('form')['agence_id'];
-        $type = $request->request->get('form')['type'];
-        $km_min = $request->request->get('form')['km_min'];
-        $km_max = $request->request->get('form')['km_max'];
-        $price_min = $request->request->get('form')['price_min'];
-        $price_max = $request->request->get('form')['price_max'];
-        $color = $request->request->get('form')['color'];
+        $agence = "";
+        $type = "";
+        $km_min = "";
+        $km_max = "";
+        $price_min = "";
+        $price_max = "";
+        $color = "";
+        if ( isset($request->request->get('form')['agence']))
+            $agence = $request->request->get('form')['agence'];
+        if ( isset($request->request->get('form')['vehicule']))
+            $type = $request->request->get('form')['vehicule'];
+        if ( isset($request->request->get('form')['Km_Min']))
+            $km_min = (int)$request->request->get('form')['Km_Min'];
+        if ( isset($request->request->get('form')['Km_Max']))
+            $km_max = (int)$request->request->get('form')['Km_Max'];
+        if ( isset($request->request->get('form')['Price_Min']))
+            $price_min = (int)$request->request->get('form')['Price_Min'];
+        if ( isset($request->request->get('form')['Price_Max']))
+            $price_max = (int)$request->request->get('form')['Price_Max'];
+        if ( isset($request->request->get('form')['couleur']))
+            $color = $request->request->get('form')['couleur'];
         $vehicules = $vehiculeManager->filter($agence, $type, $km_min, $km_max, $price_max, $price_min, $color);
         return $this->render('default/shop.html.twig', [
             'vehicules' => $vehicules
@@ -172,59 +152,90 @@ class VehiculeController extends AbstractController
     /**
      * @return Response
      */
-    /*public function filterColAction()
+    public function filterColAction()
     {
+        $agence_tab = ['Paris' => 1, 'Lyon' => 2];
+        $vehicule_tab = ['Voiture' => 1, 'Scooter' => 2];
+        $color_tab = [
+            'Blanc' => 'Blanc',
+            'Noir' => 'Noir',
+            'Gris' => 'Gris',
+            'Beige' => 'Beige',
+            'Marron' => 'Marron',
+            'Bleu' => 'Bleu',
+            'Rouge' => 'Rouge',
+            'Jaune' => 'Jaune',
+            'Vert' => 'Vert',
+            'Rose' => 'Rose',
+        ];
         $form = $this->createFormBuilder()
-            ->add('Agence',  ChoiceType::class, [
-                'class' => Agence::class
+            ->add('agence', ChoiceType::class, [
+                'label' => false,
+                'choices' => $agence_tab,
+                'multiple' => true,
+                'expanded' => true,
+                'required' => false,
+                'empty_data' => null,
+
             ])
-            ->add('Vehicule', ChoiceType::class, array(
-                'choices'  => array(
-                    'Scooter' => false,
-                    'Voiture' => false
-                )
-            ))
+            ->add('vehicule', ChoiceType::class, [
+                'label' => false,
+                'choices' => $vehicule_tab,
+                'multiple' => true,
+                'expanded' => true,
+                'required' => false,
+                'empty_data' => null
+            ])
             ->add('Km_Min',TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Min'
-                )))
+                    'placeholder' => 'Min',
+                    'class' => 'form-control checkbox-inline',
+                ),
+                'required' => false,
+                'empty_data' => null
+            ))
             ->add('Km_Max',TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Max'
-                )))
+                    'placeholder' => 'Max',
+                    'class' => 'form-control checkbox-inline'
+                ),
+                'required' => false,
+                'empty_data' => null
+            ))
             ->add('Price_Min',TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Min'
-                )))
+                    'placeholder' => 'Min',
+                    'class' => 'form-control'
+                ),
+                'required' => false,
+                'empty_data' => null
+            ))
             ->add('Price_Max',TextType::class, array(
                 'attr' => array(
-                    'placeholder' => 'Max'
-                )))
-            ->add('Couleur', ChoiceType::class, array(
-                'choices'  => array(
-                    'Blanc' => false,
-                    'Noir' => false,
-                    'Gris' => false,
-                    'Beige' => false,
-                    'Marron' => false,
-                    'Bleu' => false,
-                    'Rouge' => false,
-                    'Jaune' => false,
-                    'Vert' => false,
-                    'Rose' => false
-                )
+                    'placeholder' => 'Max',
+                    'class' => 'form-control'
+                ),
+                'required' => false,
+                'empty_data' => null
             ))
-            ->add('Trie',SubmitType::class, array(
+            ->add('couleur', ChoiceType::class, [
+                'label' => false,
+                'choices' => $color_tab,
+                'multiple' => true,
+                'expanded' => true,
+                'required' => false
+            ])
+            ->add('Trier',SubmitType::class, array(
                 'attr' => array(
                     'class' => 'btn btn-warning'
                 )
             ))
             ->setAction($this->generateUrl('filter'))
             ->getForm();
-        return $this->render('layout/filter_shop.html.twig', [
+        return $this->render('layout/filter.html.twig', [
             'form' => $form->createView()
         ]);
-    }*/
+    }
 
 
 

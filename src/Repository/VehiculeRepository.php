@@ -46,38 +46,42 @@ class VehiculeRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    public function filterAction($agence, $vehicule, $km_min, $km_max, $price_max, $price_min, $color){
-        if ($km_min == null)
-            $km_min = 0;
-        if ($km_max == null)
-            $km_max = 0;
-        if ($price_min == null)
-            $price_min = 0;
-        if ($price_max == null)
-            $price_max = 0;
-
-        if ($price_min > $price_max ) {
-            $pmax = $price_min;
-            $pmin = $price_max;
-        }else{
-            $pmax = $price_max;
-            $pmin = $price_min;
-        }
-        if ($km_min > $km_max ) {
-            $kmax = $km_min;
-            $kmin = $km_max;
-        }else{
-            $kmax = $km_max;
-            $kmin = $km_min;
-        }
+    public function filterAction($agence, $vehicule, $km_min, $km_max, $price_max, $price_min, $color)
+    {
 
         $qb = $this->createQueryBuilder('f')
-            ->orWhere('f.nb_km BETWEEN :kmin AND :kmax')
-            ->setParameter('kmin',$kmin)
-            ->setParameter('kmax',$kmax)
-            ->orWhere('f.prix_achat BETWEEN :pmin AND :pmax')
-            ->setParameter('pmin',$pmin)
-            ->setParameter('pmax',$pmax);
+            ->where('f.dispoVehicule = 1');
+        if (isset($agence) && $agence != '' && $agence != 0) {
+            foreach ($agence as $item){
+                $qb->orwhere('f.agence = :agence')
+                    ->setParameter('agence',intval($item));
+            }
+        }
+        if (isset($vehicule) && $vehicule != '' && $vehicule != 0) {
+            foreach ($vehicule as $item){
+                $qb->orwhere('f.typeVehicule = :vehicule')
+                    ->setParameter('vehicule',intval($item));
+            }
+        }
+        if (isset($color) && $color != '' && $color != 0){
+            foreach ($color as $key) {
+                $qb->andwhere('f.couleur like :color')
+                    ->setParameter('color','%' . $key . '%');
+            }
+        }
+            if ($km_min != '')
+                $qb->andwhere('f.nbKm > :kmin')
+                    ->setParameter('kmin',$km_min);
+            if ($km_max != '' && $km_max != 0)
+                $qb->andwhere('f.nbKm < :kmax')
+                    ->setParameter('kmax',$km_max);
+            if ($price_min != '')
+                $qb->andwhere('f.prixAchat > :pmin')
+                    ->setParameter('pmin',$price_min);
+            if ($price_max != '' && $price_max != 0)
+                $qb->andwhere('f.prixAchat < :pmax')
+                    ->setParameter('pmax',$price_max);
+
         return $qb
             ->getQuery()
             ->getResult();
