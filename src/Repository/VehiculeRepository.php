@@ -50,25 +50,44 @@ class VehiculeRepository extends ServiceEntityRepository
     {
 
         $qb = $this->createQueryBuilder('f')
+            ->select('f')
             ->where('f.dispoVehicule = 1');
         if (isset($agence) && $agence != '' && $agence != 0) {
-            foreach ($agence as $item){
-                $qb->orwhere('f.agence = :agence')
-                    ->setParameter('agence',intval($item));
+            var_dump($agence);
+            $req = '';
+            foreach ($agence as $item => $key) {
+                if ($item == "0")
+                    $req = 'f.agence = '.$key;
+                else
+                    $req = $req.' OR f.agence = '.$key;
             }
+            $qb->andWhere($req);
         }
+
         if (isset($vehicule) && $vehicule != '' && $vehicule != 0) {
-            foreach ($vehicule as $item){
-                $qb->orwhere('f.typeVehicule = :vehicule')
-                    ->setParameter('vehicule',intval($item));
+            var_dump($vehicule);
+            $req = '';
+            foreach ($vehicule as $item => $key) {
+                if ($item == "0")
+                    $req = 'f.typeVehicule = '.$key;
+                else
+                    $req = $req.' OR f.typeVehicule = '.$key;
             }
+            $qb->andWhere($req);
         }
-        if (isset($color) && $color != '' && $color != 0){
-            foreach ($color as $key) {
-                $qb->andwhere('f.couleur like :color')
-                    ->setParameter('color','%' . $key . '%');
+
+        if (isset($color) && $color != '' && $color != 0) {
+            var_dump($color);
+            $req = '';
+            foreach ($color as $item => $key) {
+                if ($item == "0")
+                    $req = "f.couleur LIKE '%".$key."%'";
+                else
+                    $req = $req." OR f.couleur LIKE '%".$key."%'";
             }
+            $qb->andWhere($req);
         }
+
             if ($km_min != '')
                 $qb->andwhere('f.nbKm > :kmin')
                     ->setParameter('kmin',$km_min);

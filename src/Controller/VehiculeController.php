@@ -36,9 +36,11 @@ class VehiculeController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $vehicules = $em->getRepository(Vehicule:: class)
             ->findAll();
+        $promo = true;
 
         return $this->render('default/shop.html.twig', [
-            'vehicules' => $vehicules
+            'vehicules' => $vehicules,
+            'promo' => $promo
         ]);
     }
 
