@@ -54,6 +54,11 @@ class Vehicule
     private $couleur;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $plaqueImma;
@@ -173,6 +178,19 @@ class Vehicule
     public function setCouleur(?string $couleur): self
     {
         $this->couleur = $couleur;
+
+        return $this;
+    }
+
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

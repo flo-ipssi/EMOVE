@@ -13,9 +13,9 @@
             {% if promo is defined %}
                 <div id="carouselIndicators" class="carousel slide my-4" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
@@ -34,11 +34,11 @@
                             <p>Chaque offre du jour est valable 24 heures seulement : elle commence à minuit et s'achève à 23h59 (voir conditions en bas de cette page).</p>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -56,10 +56,10 @@
                             <a href="{{ path('produit_view', {'id': vehicule.id}) }}"><img class="card-img-top" src="{{ asset(vehicule.image) }}" alt=""></a>
                             <div class="card-header">
                                 <h4><a href="{{ path('produit_view', {'id': vehicule.id}) }}">{{ vehicule.modele }}</a></h4>
-                                <p>{{ vehicule.prixachat }} €</p>
+                                <p>{{ (vehicule.prixachat)|number_format(2, ',', ' ') }} €</p>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">{{ vehicule.numserie }}</p>
+                                <p class="card-text">{{ vehicule.description }}</p>
                             </div>
                             <div class="card-footer">
                                 <a href="">Notes et commentaires </a>
@@ -68,23 +68,6 @@
                         </div>
                     </div>
                 {% endfor %}
-
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{ asset('img/item.jpg') }}" alt=""></a>
-                        <div class="card-header">
-                            <h4><a href="#">Mercedes</a></h4>
-                            <p>$24.99</p>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="">Notes et commentaires </a>
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             <!-- /.row -->

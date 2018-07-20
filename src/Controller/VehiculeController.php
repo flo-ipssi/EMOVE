@@ -52,6 +52,11 @@ class VehiculeController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $vehicule = $em->getRepository(Vehicule:: class)
             ->find($id);
+        $options = $em->getRepository(Vehicule:: class)
+            ->findBy(
+                array(),
+                array('dateAchat' => 'desc'),
+                3);
         if (!$vehicule) {
             throw $this->createNotFoundException(
                 'No vehicule found for id '.$id
@@ -60,7 +65,8 @@ class VehiculeController extends AbstractController
             throw new HttpException(400, "New comment is not valid.");
         } else {
             return $this->render('default/produit.html.twig', [
-                'vehicule' => $vehicule
+                'vehicule' => $vehicule,
+                'options' => $options
             ]);
         }
     }
