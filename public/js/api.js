@@ -1,10 +1,24 @@
-
 $( document ).ready(function() {
-
-
 	/*******************************************************/
 	/************************ INPUT ************************/
 	/*******************************************************/
+
+	$('.start').datetimepicker({
+        format:'d/m/Y H:i',
+        onShow:function( ct ){
+            this.setOptions({
+                maxDate:jQuery('.end').val()?jQuery('.end').val():false
+            })
+        }
+	});
+	$('.end').datetimepicker({
+        format:'d/m/Y H:i',
+        onShow:function( ct ){
+            this.setOptions({
+                minDate:jQuery('.start').val()?jQuery('.start').val():false
+            })
+        },
+    });
 	$('.date input').datepicker({
 		format: "dd/mm/yyyy",
 	    startDate: "today",
@@ -20,7 +34,6 @@ $( document ).ready(function() {
 		language: "fr",
 		todayHighlight: true,
 	});
-
 	/*******************************************************/
 	/******************* RESERVATION ***********************/
 	/*******************************************************/
@@ -63,7 +76,12 @@ $( document ).ready(function() {
 	});
 
 	$(".gallery_image").fancybox({
-		'hideOnContentClick': true
+		'hideOnContentClick': true,
+        'transitionIn'	:	'elastic',
+        'transitionOut'	:	'elastic',
+        'speedIn'		:	600,
+        'speedOut'		:	200,
+        'overlayShow'	:	false
 	});
 
 	/*******************************************************/

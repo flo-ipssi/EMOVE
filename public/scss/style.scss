@@ -51,6 +51,32 @@ header{
   z-index: 999;
   background: #FFF;
   border-bottom: 4px solid $color;
+  @media screen and (max-width: $medium-devices) {
+    height: 135px;
+  }
+
+  .col-sm-6{
+    @media screen and (max-width: $medium-devices) {
+      left: 0;
+      clear: both;
+      margin-top: 60px;
+      position: absolute;
+      max-width: 100%;
+      padding: 0px 20px;
+    }
+    .col-sm-10{
+      @media screen and (max-width: $medium-devices) {
+        max-width: 90%;
+      }
+    }
+  }
+  .col-sm-4{
+    @media screen and (max-width: $medium-devices) {
+      right: 0;
+      position: absolute;
+    }
+  }
+
   img{
     max-height:80px;
     @media screen and (max-width: $large-devices) {
@@ -84,12 +110,39 @@ header{
             color : $color1;
           }
         }
+        a{
+          span{
+            @media screen and (max-width: $large-devices) {
+              display: none;
+            }
+            @media screen and (max-width: $extra-large-devices) {
+              font-size: 20px;
+            }
+          }
+
+        }
         img{
           margin-top: -10px;
           height: 25px;
         }
       }
 
+    }
+
+    i{
+      display: none !important;
+      @media screen and (max-width: $large-devices) {
+        display: block !important;
+        font-size: 35px !important;
+        margin: -5px 10px;
+      }
+    }
+    .dropdown-toggle{
+      &:after{
+        @media screen and (max-width: $large-devices) {
+          content: none;
+        }
+      }
     }
 
     form{
@@ -220,6 +273,9 @@ header{
 /**************************** SHOP ******************************/
 /****************************************************************/
 .shop{
+  @media screen and (max-width: $medium-devices) {
+    margin-top: 135px;
+  }
 
   h2.my-4{
     padding: 10px;
@@ -350,9 +406,19 @@ header{
         width: 75%;
         top: 37%;
         margin: 0 auto;
-        font-size: 35px;
+        font-size: 30px;
         right: 0;
         left: 0;
+        @media screen and (max-width: $medium-devices) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: $small-devices) {
+          top: 30%;
+          font-size: 15px;
+        }
+        @media screen and (max-width: $phone-devices) {
+          font-size: 10px;
+        }
       }
       p{
         text-align: center;
@@ -361,6 +427,15 @@ header{
         width: 100%;
         margin-bottom: 3px;
         font-size: 8px;
+
+        @media screen and (max-width: $small-devices) {
+          width: 90%;
+          position: relative;
+          margin: auto;
+          margin-bottom: 3px;
+          font-size: 5px;
+          padding-top: 5px;
+        }
       }
     }
   }
@@ -369,21 +444,22 @@ header{
     .card-header{
       color:#333;
       h4{
-        float: left;
+
       }
       p{
         float: right;
         font-weight: 900;
+
       }
     }
 
     .card-text {
       margin-bottom: 0;
-      /*overflow: hidden;
-      white-space: nowrap;*/
+      overflow: hidden;
+      white-space: normal;
       max-width: none;
-      height:50px;
       text-overflow: ellipsis;
+      height:60px;
       font-size: 14px;
     }
     .text-muted {
@@ -402,53 +478,68 @@ header{
 }
 
 
+/****************************************************************/
+/*************************** PRODUCT ****************************/
+/****************************************************************/
+.slide-product{
+  max-height: 660px;
 
+  img{
+    max-height: 660px;
+  }
+}
 .product{
-  .card{
-    .carousel{
-      background: #252525;
-      img{
-        width: auto !important;
-        margin: auto;
+  max-width: 1400px;
+  padding-top: 20px;
+  .col-sm-4{
+    h1{
+      padding: 20px;
+      font-family: $family1;
+    }
+    h2{
+      float: right;
+      padding: 0px 20px;
+      font-weight: 900;
+      font-size: 30px;
+      color: #0087ff;
+      margin: -1px 0px;
+      font-family: $family1;
+    }
+    button,a{
+      margin:auto;
+      text-transform: uppercase;
+      font-size: 30px;
+      display: block;
+      width: 100%;
+      font-weight: 900;
+      font-family: $family2;
+    }
+    .hr-primary{
+      height: 1px;
+      margin-left: 15px;
+      margin-bottom: 15px;
+      background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
+    }
+    .wrap{
+      padding: 0;
+      flex-wrap: wrap;
+      list-style: none;
+      display: flex;
+      li {
+        font-size: 18px;
+        text-align: left;
+        color: #666;
+        width: 50%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        strong{
+          padding: 10px;
+        }
       }
     }
-    .card-body{
-
-    }
-    .text-muted{
-      color: #333 !important;
-    }
-    hr{
-      clear: both;
-    }
-    a.booking{
-      float: right;
-      font-size: 24px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
   }
 
-  .my-5 {
-    background: $colorlight;
-    color: #FFF;
-    .card-header{
-      color: #FFF;
-      font-weight: 800;
-    }
-
-    label{
-      text-transform: uppercase;
-      font-weight: 900;
-    }
-
-    button{
-      margin: 30px auto 0px;
-      display: block;
-      width: 111px;
-      font-weight: 900;
-    }
-  }
 }
 
 
@@ -523,7 +614,7 @@ header{
     }
 }
 
-a[href="shop"]{
+.summary a{
   text-align: center;
 }
 .introduce{
