@@ -44,17 +44,23 @@
                 </form>
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Adresse de facturation</h4>
-                <form class="needs-validation" novalidate="">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <h4 class="mb-3">Facturation</h4>
+                {{ form_row(form.vehicule) }}
+                {{ form_row(form.status_location) }}
+                {{ form_row(form.return_km) }}
+                {{ form_widget(form.return_date) }}
+                {{ form_row(form.user) }}
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" name="firstName" placeholder="Prénom" value="" required="">
+                            {{ form_widget(form.start_date) }}
                             <div class="invalid-feedback">
-                                Un prénom valide est requis.
+                                Une date valide est requis.
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" name="lastName" placeholder="Nom" value="" required="">
+                            {{ form_widget(form.end_date) }}
                             <div class="invalid-feedback">
                                 Un nom valide est requis.
                             </div>
@@ -68,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <!--<div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="ville">Ville</label>
                             <select class="custom-select d-block w-100" id="ville" required="">
@@ -89,7 +95,7 @@
                                 Veuillez sélectionner un arrondissement valide
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <hr class="mb-4">
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="save-info">
@@ -97,7 +103,7 @@
                     </div>
                     <hr class="mb-4">
 
-                    <h4 class="mb-3">Paiement</h4>
+                    <!--<h4 class="mb-3">Paiement</h4>
 
                     <div class="d-block my-3">
                         <div class="custom-control custom-radio">
@@ -146,11 +152,11 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="mb-4">
-                    <a href="{{  path('facture', {'id': vehicule.id}) }}" class="btn btn-success btn-lg btn-block" type="submit">
+                    <hr class="mb-4">-->
+                    <button class="btn btn-success btn-lg btn-block" type="submit">
                         <strong>RESERVER <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></strong>
-                    </a>
-                </form>
+                    </button>
+                    {{ form_end(form) }}
             </div>
         </div>
     </div>
