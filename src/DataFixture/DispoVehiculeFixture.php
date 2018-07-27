@@ -26,5 +26,6 @@ class DispoVehiculeFixture extends Fixture
         $manager->persist($dispo1);
         $manager->persist($dispo2);
         $manager->flush();
+        $this->addReference('dispovehicule', $dispo);
     }
 }

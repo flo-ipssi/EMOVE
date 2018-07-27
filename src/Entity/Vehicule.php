@@ -285,4 +285,9 @@ class Vehicule
 
         return $this;
     }
+
+    public function getVehicule()
+    {
+        return $this->getId();
+    }
 }
