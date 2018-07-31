@@ -21,8 +21,11 @@ class StatusLocationFixture extends Fixture
         $loue->setLabel('En location');
         $reserve = new StatusLocation();
         $reserve->setLabel('Réservé');
+        $rendu = new StatusLocation();
+        $rendu->setLabel('Retourné');
         $manager->persist($loue);
         $manager->persist($reserve);
+        $manager->persist($rendu);
         $manager->flush();
     }
 }

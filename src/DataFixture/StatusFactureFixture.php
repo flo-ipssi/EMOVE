@@ -17,7 +17,7 @@ class StatusFactureFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         $signe = new StatusFacture();
-        $signe->setLabel('Signé');
+        $signe->setLabel('A signé');
         $dispo = new StatusFacture();
         $dispo->setLabel('Disponible');
         $manager->persist($signe);

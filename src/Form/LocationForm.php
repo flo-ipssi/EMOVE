@@ -33,14 +33,27 @@ class LocationForm extends AbstractType
             ->add('vehicule', EntityType::class, [
                 'class' => Vehicule::class,
                 'choice_label' => 'vehicule',
+                'label' => false,
+                'attr' => [
+                    'class' => 'hidden'
+                ]
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,
-                'choice_label' => 'utilisateur'
+                'choice_label' => 'utilisateur',
+                'label' => false,
+                'attr' => [
+                    'class' => 'hidden'
+                ]
             ])
             ->add('status_location', EntityType::class, [
                 'class' => StatusLocation::class,
-                'choice_label' => 'location'
+                'choice_label' => 'location',
+                'label' => false,
+                'attr' => [
+                    'class' => 'hidden'
+                ],
+                'data' => 2
             ])
             ->add('start_date', DateTimeType::class,[
                 'format' => 'dd/MM/yyyy H:mm',
@@ -61,26 +74,21 @@ class LocationForm extends AbstractType
                 ]
             ])
             ->add('return_km', IntegerType::class,[
-                'data' => 54
-            ])
-            ->add('return_date', DateTimeType::class,[
-                'format' => 'dd/MM/yyyy H:mm',
-                'widget' => 'single_text',
+                'data' => 0,
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Fin de la location',
-                    'class' => 'form-control end'
+                    'class' => 'hidden'
                 ]
             ])
+            ->add('return_date', HiddenType::class,[
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Fin de la location réel',
+                    'class' => 'form-control end hidden'
+                ],
+                'data' => false
+            ])
         ;
-    }
-
-
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'id' => 1
-        ]);
     }
 
 

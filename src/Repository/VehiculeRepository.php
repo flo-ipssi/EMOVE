@@ -35,7 +35,18 @@ class VehiculeRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function updateDispo($userId)
+    {
+        $qB = $this->createQueryBuilder('p');
+        //$qB = $this->getEntityManager()->createQueryBuilder();
+        $qB ->update('App:Vehicule', 'p')
+            ->set('p.dispoVehicule', '?1')
+            ->where('p.id = ?2')
+            ->setParameter(1, 2)
+            ->setParameter(2, $userId);
 
+        return $qB->getQuery();
+    }
 
     public function searchAction($search){
         $qb = $this->createQueryBuilder('f')
