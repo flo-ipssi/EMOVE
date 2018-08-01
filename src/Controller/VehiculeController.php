@@ -58,10 +58,7 @@ class VehiculeController extends AbstractController
                 ['id' => $id ,'dispoVehicule' => 1]
             );
         $options = $em->getRepository(Vehicule:: class)
-            ->findBy(
-                array('dispoVehicule' => 1),
-                array('dateAchat' => 'desc'),
-                3);
+            ->findByNot('id', $id);
         if (!$vehicule) {
             throw $this->createNotFoundException(
                 'Vehicule absent'
@@ -114,7 +111,6 @@ class VehiculeController extends AbstractController
      */
     public function filterVehicule(Request $request, VehiculeManager $vehiculeManager)
     {
-        $em = $this->getDoctrine()->getManager();
         $agence = "";
         $type = "";
         $km_min = "";

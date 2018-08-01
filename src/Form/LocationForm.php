@@ -27,17 +27,8 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class LocationForm extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $option){
-        $now = new \DateTime( 'now' );
+    public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
-            ->add('vehicule', EntityType::class, [
-                'class' => Vehicule::class,
-                'choice_label' => 'vehicule',
-                'label' => false,
-                'attr' => [
-                    'class' => 'hidden'
-                ]
-            ])
             ->add('user', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'utilisateur',
@@ -45,15 +36,6 @@ class LocationForm extends AbstractType
                 'attr' => [
                     'class' => 'hidden'
                 ]
-            ])
-            ->add('status_location', EntityType::class, [
-                'class' => StatusLocation::class,
-                'choice_label' => 'location',
-                'label' => false,
-                'attr' => [
-                    'class' => 'hidden'
-                ],
-                'data' => 2
             ])
             ->add('start_date', DateTimeType::class,[
                 'format' => 'dd/MM/yyyy H:mm',
@@ -73,13 +55,6 @@ class LocationForm extends AbstractType
                     'class' => 'form-control end'
                 ]
             ])
-            ->add('return_km', IntegerType::class,[
-                'data' => 0,
-                'label' => false,
-                'attr' => [
-                    'class' => 'hidden'
-                ]
-            ])
             ->add('return_date', HiddenType::class,[
                 'label' => false,
                 'attr' => [
@@ -90,6 +65,10 @@ class LocationForm extends AbstractType
             ])
         ;
     }
-
-
+    public function setDefaultOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => Location::class,
+        ));
+    }
 }

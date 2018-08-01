@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Entity\DispoVehicule;
 use App\Entity\Location;
+use App\Entity\StatusLocation;
 use App\Entity\Vehicule;
 use App\Form\LocationForm;
 use App\Entity\User;
@@ -36,8 +37,17 @@ class LocationController extends AbstractController
                 ['id' => $id ,'dispoVehicule' => 1],
                 ['id' => 'ASC']
             );
+        $statut = $em->getRepository(StatusLocation:: class)
+            ->findOneBy(
+                ['id' => 2],
+                ['id' => 'ASC']
+            );
         $location = new Location();
-        $form = $this->createForm(LocationForm::class, $location, array('id' => $id));
+        $location->setVehicule($vehicule);
+        $location->setStatusLocation($statut);
+        $location->setReturnKm(null);
+        $location->setReturnDate(null);
+        $form = $this->createForm(LocationForm::class, $location);
         $form->handleRequest($request);
         if (!$vehicule)
         {
@@ -62,16 +72,22 @@ class LocationController extends AbstractController
                     ['vehicule' => 'ASC']
                 );
             if (!$loue || !$reserve) {
-                $dispo = $em->getRepository(DispoVehicule:: class)
-                    ->find(2);
-                $em = $this->getDoctrine()->getManager();
-                $vehicule->setDispoVehicule($dispo);
-                $em->persist($location, $vehicule);
-                $em->flush();
-                $em->refresh($location);
-                return $this->redirectToRoute('facture', [
-                    'id' => $location->getId(),
-                ]);
+                $start = $form["start_date"]->getData();
+                $end = $form["end_date"]->getData();
+                if ($start >= $end){
+                    throw new HttpException(400, "Mauvaise date");
+                }else {
+                    $dispo = $em->getRepository(DispoVehicule:: class)
+                        ->find(2);
+                    $em = $this->getDoctrine()->getManager();
+                    $vehicule->setDispoVehicule($dispo);
+                    $em->persist($location, $vehicule);
+                    $em->flush();
+                    $em->refresh($location);
+                    return $this->redirectToRoute('facture', [
+                        'id' => $location->getId(),
+                    ]);
+                }
             }else{
                 throw new HttpException(400, "VEHICULE Loue ou Reserve");
             }
