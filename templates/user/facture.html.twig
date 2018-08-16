@@ -2,9 +2,9 @@
 {% extends "layout/layout.html.twig" %}
 {% block content %}
 
-    {% set promo = 5 %}
-    {% set HT = vehicule.prixachat - (vehicule.prixachat * 20/100) %}
-    {% set TVA = vehicule.prixachat * 20/100 %}
+    {% set promo = 0 %}
+    {% set TVA = vehicule.prixachat - (vehicule.prixachat * 20/100) %}
+    {% set TVA2 = vehicule.prixachat * 20/100 %}
     {% set total = vehicule.prixachat - (vehicule.prixachat * promo/100) %}
     <div class="container">
         <div class="row resume">
@@ -51,19 +51,17 @@
                                 <td class="col-md-7"><h4><em>{{ vehicule.modele }}</em></h4></td>
                                 <td class="col-md-1" style="text-align: center"> {{ location.startdate|date("m/d/Y H:i")  }} </td>
                                 <td class="col-md-1" style="text-align: center"> {{ location.enddate|date("m/d/Y H:i")  }} </td>
-                                <td class="col-md-1 text-center">{{ (promo)|number_format(0, ',', ' ') }} %</td>
+                                <td class="col-md-1 text-center">0,00 €</td>
                                 <td class="col-md-2 text-center">{{ (vehicule.prixachat)|number_format(2, ',', ' ') }} €</td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="text-right">
-                                    <p><strong>Reduction: </strong></p>
                                     <p><strong>Sous-total: </strong></p>
                                     <p><strong>TVA: </strong></p>
                                 </td>
                                 <td colspan="3" class="text-center">
-                                    <p><strong>{{ (vehicule.prixachat * promo/100)|number_format(2, ',', ' ') }} €</strong></p>
-                                    <p><strong>{{ (HT)|number_format(2, ',', ' ') }} €</strong></p>
                                     <p><strong>{{ (TVA)|number_format(2, ',', ' ') }} €</strong></p>
+                                    <p><strong>{{ (TVA2)|number_format(2, ',', ' ') }} €</strong></p>
                                 </td>
                             </tr>
                             <tr>
