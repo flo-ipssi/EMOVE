@@ -22,8 +22,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
-
-
 class LocationController extends AbstractController
 {
     /**
@@ -150,9 +148,12 @@ class LocationController extends AbstractController
                 'vehicule' => $vehicule,
                 'user' => $user
             ));
+            $firstname =$user->getfirstname();
+            $modele = $vehicule->getModele();
+            $name = 'location_'.$firstname.'_'.$modele;
             $html2pdf = new Html2Pdf();
             $html2pdf->create('P', 'A4', 'fr', true, 'UTF-8', array(10, 15, 10, 15));
-            return $html2pdf->generatePdf($template, 'facture');
+            return $html2pdf->generatePdf($template, $name);
         }
     }
 }

@@ -21,7 +21,7 @@ class UserFixture extends Fixture
         $user->setFirstName('Toto');
         $user->setLastName('Titi');
         $user->setEmail('contact@ecole-ipssi.com');
-        $user->setPassword('tata');
+        $user->setPassword('$2y$10$InPdt84RWA7ZtV9g5U61reZBytxxJFfZw028Z6f6MzhbUDpeuzRYG');
         $user->setBirthDate(new \DateTime('1993/01/01'));
         $user->setAdresse('17 Rue Claude Tillier,');
         $user->setFidelityPoint(70);
